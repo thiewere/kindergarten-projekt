@@ -1,15 +1,13 @@
 package com.example.kindergarten_projekt.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "t_zahlungsart")
 public class TZahlungsart {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "zahlungsart_id", nullable = false)
     private Integer id;
 
