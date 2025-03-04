@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt;
+package com.example.kindergarten_projekt.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -17,7 +17,7 @@ public class TElternKinder {
     @MapsId("ekKindId")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ek_kind_id", nullable = false)
-    private com.example.kindergarten_projekt.TKinder ekKind;
+    private TKinder ekKind;
 
     @ColumnDefault("''")
     @Column(name = "rolle", nullable = false, length = 50)
@@ -39,11 +39,11 @@ public class TElternKinder {
         this.ekEltern = ekEltern;
     }
 
-    public com.example.kindergarten_projekt.TKinder getEkKind() {
+    public TKinder getEkKind() {
         return ekKind;
     }
 
-    public void setEkKind(com.example.kindergarten_projekt.TKinder ekKind) {
+    public void setEkKind(TKinder ekKind) {
         this.ekKind = ekKind;
     }
 

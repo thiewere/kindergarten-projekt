@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt;
+package com.example.kindergarten_projekt.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -15,12 +15,12 @@ public class TMitarbeiter {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("0")
     @JoinColumn(name = "mitarbeiter_standort_id", nullable = false)
-    private com.example.kindergarten_projekt.TStandort mitarbeiterStandort;
+    private TStandort mitarbeiterStandort;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("'0'")
     @JoinColumn(name = "mitarbeiter_plz", nullable = false)
-    private com.example.kindergarten_projekt.TPostleitzahl mitarbeiterPlz;
+    private TPostleitzahl mitarbeiterPlz;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("0")
@@ -62,19 +62,19 @@ public class TMitarbeiter {
         this.id = id;
     }
 
-    public com.example.kindergarten_projekt.TStandort getMitarbeiterStandort() {
+    public TStandort getMitarbeiterStandort() {
         return mitarbeiterStandort;
     }
 
-    public void setMitarbeiterStandort(com.example.kindergarten_projekt.TStandort mitarbeiterStandort) {
+    public void setMitarbeiterStandort(TStandort mitarbeiterStandort) {
         this.mitarbeiterStandort = mitarbeiterStandort;
     }
 
-    public com.example.kindergarten_projekt.TPostleitzahl getMitarbeiterPlz() {
+    public TPostleitzahl getMitarbeiterPlz() {
         return mitarbeiterPlz;
     }
 
-    public void setMitarbeiterPlz(com.example.kindergarten_projekt.TPostleitzahl mitarbeiterPlz) {
+    public void setMitarbeiterPlz(TPostleitzahl mitarbeiterPlz) {
         this.mitarbeiterPlz = mitarbeiterPlz;
     }
 

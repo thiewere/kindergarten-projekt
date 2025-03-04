@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt;
+package com.example.kindergarten_projekt.model;
 
 import jakarta.persistence.*;
 
@@ -14,7 +14,7 @@ public class TAnwesenheit {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "aw_kind_id", nullable = false)
-    private com.example.kindergarten_projekt.TKinder awKind;
+    private TKinder awKind;
 
     @Column(name = "aw_datum", nullable = false)
     private LocalDate awDatum;
@@ -30,11 +30,11 @@ public class TAnwesenheit {
         this.id = id;
     }
 
-    public com.example.kindergarten_projekt.TKinder getAwKind() {
+    public TKinder getAwKind() {
         return awKind;
     }
 
-    public void setAwKind(com.example.kindergarten_projekt.TKinder awKind) {
+    public void setAwKind(TKinder awKind) {
         this.awKind = awKind;
     }
 
