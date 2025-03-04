@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt.model.repository;
+package com.example.kindergarten_projekt.repository;
 
 import com.example.kindergarten_projekt.model.TGruppe;
 import org.springframework.data.jpa.repository.JpaRepository;
