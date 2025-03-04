@@ -54,6 +54,7 @@ public class TMitarbeiter {
     @Column(name = "mitarbeiter_rolle", nullable = false, length = 30)
     private String mitarbeiterRolle;
 
+
     public Integer getId() {
         return id;
     }
