@@ -5,6 +5,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
+
 @Entity
 @Table(name = "t_mitarbeiter")
 public class TMitarbeiter {
@@ -53,6 +54,16 @@ public class TMitarbeiter {
     @ColumnDefault("''")
     @Column(name = "mitarbeiter_rolle", nullable = false, length = 30)
     private String mitarbeiterRolle;
+
+
+//    private enum mitarbeiterTyp{
+//      Verwalter, Erzieher;
+//    }
+//    @Enumerated(EnumType.STRING)
+//    private MitarbeiterRolle rolle;
+//
+//    mitarbeiterTyp varwalter = mitarbeiterTyp.Verwalter;
+
 
 
     public Integer getId() {

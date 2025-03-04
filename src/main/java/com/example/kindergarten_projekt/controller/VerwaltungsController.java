@@ -18,6 +18,8 @@ public class VerwaltungsController {
 
     @Autowired
     private VerwaltungServiceImplement verwaltungServiceImplement;
+
+    @Autowired
     private StandortServiceImplement standortServiceImplement;
 
 
