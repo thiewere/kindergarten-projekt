@@ -21,13 +21,15 @@ public class VerwaltungsController {
     private StandortServiceImplement standortServiceImplement;
 
 
-    @GetMapping("/")
+    @GetMapping("/zahlungsart")
     public List<TZahlungsart> getAllZahlungsart() {
         return verwaltungServiceImplement.getAllZahlungsart();
     }
 
+    @GetMapping("/standort")
     public List<TStandort> getAllStandort() {return standortServiceImplement.getAllStandort();}
 
+    @GetMapping("/postleitzahl")
     public List<TPostleitzahl> getAllPostleitzahl() {return standortServiceImplement.getAllPostleitzahl();}
 
 
