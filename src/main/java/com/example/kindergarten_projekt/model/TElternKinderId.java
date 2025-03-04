@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt;
+package com.example.kindergarten_projekt.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

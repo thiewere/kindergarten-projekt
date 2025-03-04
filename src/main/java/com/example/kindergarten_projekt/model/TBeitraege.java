@@ -1,4 +1,4 @@
-package com.example.kindergarten_projekt;
+package com.example.kindergarten_projekt.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -14,11 +14,11 @@ public class TBeitraege {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "eltern_id", nullable = false)
-    private com.example.kindergarten_projekt.TEltern eltern;
+    private TEltern eltern;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "zahlungsart_id", nullable = false)
-    private com.example.kindergarten_projekt.TZahlungsart zahlungsart;
+    private TZahlungsart zahlungsart;
 
     @ColumnDefault("0")
     @Column(name = "beitrag", nullable = false)
@@ -42,19 +42,19 @@ public class TBeitraege {
         this.id = id;
     }
 
-    public com.example.kindergarten_projekt.TEltern getEltern() {
+    public TEltern getEltern() {
         return eltern;
     }
 
-    public void setEltern(com.example.kindergarten_projekt.TEltern eltern) {
+    public void setEltern(TEltern eltern) {
         this.eltern = eltern;
     }
 
-    public com.example.kindergarten_projekt.TZahlungsart getZahlungsart() {
+    public TZahlungsart getZahlungsart() {
         return zahlungsart;
     }
 
-    public void setZahlungsart(com.example.kindergarten_projekt.TZahlungsart zahlungsart) {
+    public void setZahlungsart(TZahlungsart zahlungsart) {
         this.zahlungsart = zahlungsart;
     }
 
