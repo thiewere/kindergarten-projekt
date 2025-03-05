@@ -4,10 +4,12 @@ import com.example.kindergarten_projekt.model.TDienstplan;
 import com.example.kindergarten_projekt.model.TMitarbeiter;
 import com.example.kindergarten_projekt.repository.TDienstplanRepository;
 import com.example.kindergarten_projekt.repository.TMitarbeiterRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Service
 public class MitarbeiterServiceImplement implements MitarbeiterService {
 
     private final TMitarbeiterRepository mitarbeiterRepository;

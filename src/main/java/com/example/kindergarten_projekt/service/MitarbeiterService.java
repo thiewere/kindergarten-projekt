@@ -16,6 +16,7 @@ public interface MitarbeiterService {
     void deleteMitarbeiterById(Integer id);
 
 
+
     // Dienstplan Services
     List<TDienstplan> getAllDienstplan();
     TDienstplan getDienstplanByMitarbeiterId(Integer mitarbeiterId);
