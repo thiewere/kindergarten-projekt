@@ -54,16 +54,16 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
         return dienstplanRepository.findAll();
     }
 
-    //TODO: dienstplanRepository.findById(mitarbeiterId)
     @Override
     public TDienstplan getDienstplanByMitarbeiterId(Integer mitarbeiterId) {
-        return null;
+        return dienstplanRepository.findById(mitarbeiterId).orElseThrow(()
+                -> new RuntimeException("Mitarbeiter nicht gefunden"));
     }
 
-    //TODO: dienstplanRepository.findBy(dienstplanDatum)
     @Override
     public TDienstplan getDienstplanByDienstplanDatum(LocalDate dienstplanDatum) {
-        return null;
+
+        return dienstplanRepository.findByDienstplanDatum(dienstplanDatum);
     }
 
     @Override
