@@ -25,6 +25,7 @@ public class StandortServiceImplement implements StandortService {
         return standortRepository.save(standort);
     }
 
+
     @Override
     public TPostleitzahl addPostleitzahl(TPostleitzahl postleitzahl) {
         return postleitzahlRepository.save(postleitzahl);
@@ -34,6 +35,7 @@ public class StandortServiceImplement implements StandortService {
     public List<TStandort> getAllStandort() {
         return standortRepository.findAll();
     }
+
 
     @Override
     public List<TPostleitzahl> getAllPostleitzahl() {

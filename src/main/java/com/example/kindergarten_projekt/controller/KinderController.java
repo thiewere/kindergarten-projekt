@@ -13,15 +13,18 @@ public class KinderController {
     KinderServiceImplement kinderServiceImplement;
     @GetMapping("/getAllKinder")
     public List<TKinder> getAllKinder(){
+
         return kinderServiceImplement.getAllKinder();
     }
 
     @GetMapping("/getKind/{id}")
     public TKinder getKindById(@PathVariable Integer id){
+
         return kinderServiceImplement.getKindById(id);
     }
     @PostMapping("/addKind")
     public TKinder addKinder(@RequestBody TKinder kinder){
+
         return kinderServiceImplement.addKinder(kinder);
     }
     @PostMapping("/updateKind/{id}")
@@ -30,6 +33,7 @@ public class KinderController {
     }
     @PostMapping("/deleteKind/{id}")
     public String deleteKindById(@PathVariable Integer id){
+
         return kinderServiceImplement.deleteKindById(id);
     }
 

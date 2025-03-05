@@ -57,7 +57,7 @@ public class BeitragController {
         return beitraegeServiceImplement.updateBeitragById(beitrag, id);
     }
 
-    @PostMapping("/deletBeitrag/{id}")
+    @PostMapping("/deleteBeitrag/{id}")
     public String deleteBeitrag(@PathVariable Integer id) {
         return beitraegeServiceImplement.deleteZahlungsartById(id);
     }

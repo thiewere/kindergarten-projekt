@@ -13,4 +13,6 @@ public interface StandortService {
 
     List<TStandort> getAllStandort();
     List<TPostleitzahl> getAllPostleitzahl();
+
+
 }
