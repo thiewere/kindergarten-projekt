@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Table(name = "t_kinder")
 public class TKinder {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "kind_id", nullable = false)
     private Integer id;
 

@@ -7,6 +7,7 @@ import org.hibernate.annotations.ColumnDefault;
 @Table(name = "t_eltern")
 public class TEltern {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "eltern_id", nullable = false)
     private Integer id;
 

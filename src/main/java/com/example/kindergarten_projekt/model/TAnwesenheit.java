@@ -9,6 +9,7 @@ import java.time.LocalTime;
 @Table(name = "t_anwesenheit")
 public class TAnwesenheit {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "aw_id", nullable = false)
     private Integer id;
 

@@ -1,14 +1,12 @@
 package com.example.kindergarten_projekt.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "t_postleitzahl")
 public class TPostleitzahl {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "plz", nullable = false, length = 5)
     private String plz;
 
