@@ -4,10 +4,7 @@ import com.example.kindergarten_projekt.model.TAnwesenheit;
 import com.example.kindergarten_projekt.service.AnwesenheitServiceImplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -39,16 +36,16 @@ public class AnwesenheitController {
         return anwesenheitServiceImplement.addAnwesenheit(anwesenheit);
     }
 
-    @GetMapping("/updateAnwesenheit/{id}")
+    @PostMapping("/updateAnwesenheit/{id}")
     public TAnwesenheit updateAnwesenheitByKinderId(@RequestBody TAnwesenheit anwesenheit, @PathVariable Integer id) {
         return anwesenheitServiceImplement.updateAnwesenheit(anwesenheit);
     }
-    @GetMapping("/deleteAnwesenheit/{id}")
+    @PostMapping("/deleteAnwesenheit/{id}")
     public List<TAnwesenheit> deleteAnwesenheitByKinderId(@PathVariable Integer id) {
         return anwesenheitServiceImplement.deleteAnwesenheitByKinderId(id);
     }
 
-    @GetMapping("/deleteAnwesenheit/{datum}")
+    @PostMapping("/deleteAnwesenheit/{datum}")
     public List<TAnwesenheit> deleteAnwesenheitByDatum(@PathVariable LocalDate datum) {
         return anwesenheitServiceImplement.deleteAnwesenheitByDatum(datum);
     }
