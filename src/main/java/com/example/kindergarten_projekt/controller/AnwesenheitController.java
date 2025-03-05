@@ -5,8 +5,6 @@ import com.example.kindergarten_projekt.service.AnwesenheitServiceImplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 

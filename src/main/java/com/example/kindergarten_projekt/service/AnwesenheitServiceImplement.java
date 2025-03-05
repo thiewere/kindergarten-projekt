@@ -46,9 +46,8 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
         return anwesenheitRepository.getTAnwesenheitByAwDatum(datum);
     }
 
-
     @Override
-    public List<TAnwesenheit> updateAnwesenheitByKinderId(int kinderId) {
+    public List<TAnwesenheit> updateAnwesenheitByKinderId(TAnwesenheit anwesenheit , Integer kinderId) {
         return anwesenheitRepository.findAllById(List.of(kinderId));
     }
 

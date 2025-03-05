@@ -13,7 +13,7 @@ public interface AnwesenheitService  {
     List<TAnwesenheit> getAnwesenheitByKinderId(int kinderId);
     List<TAnwesenheit> getAnwesenheitByDatum(LocalDate datum);
 
-    List<TAnwesenheit> updateAnwesenheitByKinderId(int kinderId);
+    List<TAnwesenheit> updateAnwesenheitByKinderId( TAnwesenheit anwesenheit, Integer kinderId);
 
     List<TAnwesenheit> deleteAnwesenheitByKinderId(int kinderId);
     List<TAnwesenheit> deleteAnwesenheitByDatum(LocalDate datum);
