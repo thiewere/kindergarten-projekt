@@ -10,6 +10,7 @@ public interface ElternKinderService {
     TElternKinder addElternKinderBeziehung(TElternKinder elternKinder);
 
     List<TElternKinder> getAllElternKinder();
+
     List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId);
 
     //Alle Kinder des Elternteils
