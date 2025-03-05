@@ -1,9 +1,10 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TDienstplan;
 import com.example.kindergarten_projekt.model.TMitarbeiter;
 import com.example.kindergarten_projekt.repository.TDienstplanRepository;
 import com.example.kindergarten_projekt.repository.TMitarbeiterRepository;
+import com.example.kindergarten_projekt.service.MitarbeiterService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

@@ -2,7 +2,7 @@ package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TBeitraege;
 import com.example.kindergarten_projekt.model.TZahlungsart;
-import com.example.kindergarten_projekt.service.BeitraegeServiceImplement;
+import com.example.kindergarten_projekt.serviceImplement.BeitraegeServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

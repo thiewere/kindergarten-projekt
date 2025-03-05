@@ -1,10 +1,11 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 
 import com.example.kindergarten_projekt.model.TPostleitzahl;
 import com.example.kindergarten_projekt.model.TStandort;
 import com.example.kindergarten_projekt.repository.TPostleitzahlRepository;
 import com.example.kindergarten_projekt.repository.TStandortRepository;
+import com.example.kindergarten_projekt.service.StandortService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

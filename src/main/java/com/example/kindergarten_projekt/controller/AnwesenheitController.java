@@ -1,7 +1,7 @@
 package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TAnwesenheit;
-import com.example.kindergarten_projekt.service.AnwesenheitServiceImplement;
+import com.example.kindergarten_projekt.serviceImplement.AnwesenheitServiceImplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,11 +1,12 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TGruppe;
 import com.example.kindergarten_projekt.repository.TGruppeRepository;
+import com.example.kindergarten_projekt.service.GruppeService;
 
 import java.util.List;
 
-public class GruppeServiceImplement implements GruppeService{
+public class GruppeServiceImplement implements GruppeService {
     private final TGruppeRepository gruppeRepository;
 
     public GruppeServiceImplement(TGruppeRepository gruppeRepository) {
