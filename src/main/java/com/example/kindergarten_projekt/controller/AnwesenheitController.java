@@ -21,6 +21,7 @@ public class AnwesenheitController {
         return anwesenheitServiceImplement.getAllAnwesenheit();
     }
 
+
     @GetMapping("/anwesenheit/{id}")
     public List<TAnwesenheit> getAnwesenheitByKinderId(@PathVariable Integer id) {
         return anwesenheitServiceImplement.getAnwesenheitByKinderId(id);
