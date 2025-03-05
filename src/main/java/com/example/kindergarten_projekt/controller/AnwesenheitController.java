@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -29,8 +30,8 @@ public class AnwesenheitController {
     }
 
     @GetMapping("/anwesenheit/{datum}")
-    public List<TAnwesenheit> getAnwesenheitByDatum(@PathVariable String datum) {
-        return anwesenheitServiceImplement.getAnwesenheitByDatum(Date.valueOf(datum));
+    public List<TAnwesenheit> getAnwesenheitByDatum(@PathVariable LocalDate datum) {
+        return anwesenheitServiceImplement.getAnwesenheitByDatum(datum);
     }
 
     @GetMapping("/addAnwesenheit")
@@ -48,7 +49,7 @@ public class AnwesenheitController {
     }
 
     @GetMapping("/deleteAnwesenheit/{datum}")
-    public List<TAnwesenheit> deleteAnwesenheitByDatum(@PathVariable String datum) {
-        return anwesenheitServiceImplement.deleteAnwesenheitByDatum(Date.valueOf(datum));
+    public List<TAnwesenheit> deleteAnwesenheitByDatum(@PathVariable LocalDate datum) {
+        return anwesenheitServiceImplement.deleteAnwesenheitByDatum(datum);
     }
 }

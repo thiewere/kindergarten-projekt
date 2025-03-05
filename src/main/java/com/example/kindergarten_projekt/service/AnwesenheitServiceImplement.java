@@ -6,6 +6,7 @@ import com.example.kindergarten_projekt.repository.TAnwesenheitRepository;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -41,9 +42,10 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
     }
 
     @Override
-    public List<TAnwesenheit> getAnwesenheitByDatum(Date datum) {
-        return anwesenheitRepository.getTAnwesenheitByAwDatum((datum).toLocalDate());
+    public List<TAnwesenheit> getAnwesenheitByDatum(LocalDate datum) {
+        return anwesenheitRepository.getTAnwesenheitByAwDatum(datum);
     }
+
 
     @Override
     public List<TAnwesenheit> updateAnwesenheitByKinderId(int kinderId) {
@@ -64,7 +66,7 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
 
 
     @Override
-    public List<TAnwesenheit> deleteAnwesenheitByDatum(Date datum) {
-        return anwesenheitRepository.removeTAnwesenheitByAwDatum((datum).toLocalDate());
+    public List<TAnwesenheit> deleteAnwesenheitByDatum(LocalDate datum) {
+        return anwesenheitRepository.removeTAnwesenheitByAwDatum(datum);
     }
 }
