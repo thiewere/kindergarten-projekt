@@ -25,25 +25,25 @@ public class ElternKinderServiceImplement implements ElternKinderService{
     public List<TElternKinder> getAllElternKinder() {
         return elternKinderRepository.findAll();
     }
-    //TODO: elternKinderRepository.findById(elternKinderId)
-    //                .orElseThrow(() -> new RuntimeException("Eltern-Kind-Beziehung nicht gefunden"));
+
     @Override
     public List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId) {
-        return List.of();
+        return elternKinderRepository.findAllById(List.of(elternKinderId));
     }
 
-    //TODO: elternKinderRepository.findByElternId(elternId);
     @Override
     public List<TElternKinder> getKinderByElternId(Integer elternId) {
-        return List.of();
+
+        return elternKinderRepository.findByEkElternId(elternId);
     }
 
-    //TODO: elternKinderRepository.findByKindId(kinderId);
     @Override
     public List<TElternKinder> getElternByKinderId(Integer kinderId) {
-        return List.of();
+
+        return elternKinderRepository.findByEkKindId(kinderId);
     }
 
+    //TODO
     @Override
     public TElternKinder updateElternKinder(TElternKinder elternKinder) {
         return null;
