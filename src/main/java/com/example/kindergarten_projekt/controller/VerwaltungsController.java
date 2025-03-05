@@ -4,7 +4,7 @@ import com.example.kindergarten_projekt.model.TPostleitzahl;
 import com.example.kindergarten_projekt.model.TStandort;
 import com.example.kindergarten_projekt.model.TZahlungsart;
 import com.example.kindergarten_projekt.service.StandortServiceImplement;
-import com.example.kindergarten_projekt.service.VerwaltungServiceImplement;
+import com.example.kindergarten_projekt.service.BeitraegeServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,16 +17,10 @@ import java.util.List;
 public class VerwaltungsController {
 
     @Autowired
-    private VerwaltungServiceImplement verwaltungServiceImplement;
-
-    @Autowired
     private StandortServiceImplement standortServiceImplement;
 
 
-    @GetMapping("/zahlungsart")
-    public List<TZahlungsart> getAllZahlungsart() {
-        return verwaltungServiceImplement.getAllZahlungsart();
-    }
+
 
     @GetMapping("/standort")
     public List<TStandort> getAllStandort() {return standortServiceImplement.getAllStandort();}
@@ -34,12 +28,6 @@ public class VerwaltungsController {
     @GetMapping("/postleitzahl")
     public List<TPostleitzahl> getAllPostleitzahl() {return standortServiceImplement.getAllPostleitzahl();}
 
-
-    @PostMapping("/addZahlungsart")
-    public TZahlungsart addZahlungsart(@RequestBody TZahlungsart zahlungsart) {
-
-        return verwaltungServiceImplement.addZahlungsart(zahlungsart);
-    }
 
     @PostMapping("/addStandort")
     public TStandort addStandort(@RequestBody TStandort standort) {
