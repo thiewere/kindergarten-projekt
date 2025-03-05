@@ -6,7 +6,6 @@ import com.example.kindergarten_projekt.model.TMitarbeiter;
 import java.time.LocalDate;
 import java.util.List;
 
-//TODO: update Methoden
 public interface MitarbeiterService {
 
     // Mitarbeiter Services
@@ -14,6 +13,7 @@ public interface MitarbeiterService {
     TMitarbeiter getMitarbeiterById(Integer id);
     TMitarbeiter addMitarbeiter(TMitarbeiter mitarbeiter);
     void deleteMitarbeiterById(Integer id);
+    TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Integer id);
 
 
 
@@ -23,5 +23,6 @@ public interface MitarbeiterService {
     TDienstplan getDienstplanByDienstplanDatum(LocalDate dienstplanDatum);
     TDienstplan addDienstplan(TDienstplan dienstplan);
     void deleteDienstplanById(Integer id);
+    TDienstplan updateDienstplan(TDienstplan dienstplan, Integer id);
 
 }

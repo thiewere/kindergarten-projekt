@@ -42,6 +42,11 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
         mitarbeiterRepository.deleteById(id);
     }
 
+    @Override
+    public TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Integer id) {
+        return null;
+    }
+
     //Dienstplan
 
     @Override
@@ -69,5 +74,10 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
     @Override
     public void deleteDienstplanById(Integer id) {
         dienstplanRepository.deleteById(id);
+    }
+
+    @Override
+    public TDienstplan updateDienstplan(TDienstplan dienstplan, Integer id) {
+        return null;
     }
 }
