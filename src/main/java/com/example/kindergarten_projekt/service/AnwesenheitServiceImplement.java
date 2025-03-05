@@ -1,11 +1,8 @@
 package com.example.kindergarten_projekt.service;
 
 import com.example.kindergarten_projekt.model.TAnwesenheit;
-import com.example.kindergarten_projekt.model.TZahlungsart;
 import com.example.kindergarten_projekt.repository.TAnwesenheitRepository;
 import org.springframework.stereotype.Service;
-
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -43,12 +40,20 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
 
     @Override
     public List<TAnwesenheit> getAnwesenheitByDatum(LocalDate datum) {
-        return anwesenheitRepository.getTAnwesenheitByAwDatum(datum);
+        return anwesenheitRepository.findTAnwesenheitByAwDatum(datum);
     }
 
     @Override
-    public List<TAnwesenheit> updateAnwesenheitByKinderId(TAnwesenheit anwesenheit , Integer kinderId) {
-        return anwesenheitRepository.findAllById(List.of(kinderId));
+    public TAnwesenheit updateAnwesenheit(TAnwesenheit anwesenheit, Integer id) {
+        return anwesenheitRepository.findById(id)
+                .map(aw -> {
+                    aw.setAwDatum(anwesenheit.getAwDatum());
+                    aw.setAwKind(anwesenheit.getAwKind());
+                    aw.setAbgeholtUhr(anwesenheit.getAbgeholtUhr());
+                    return anwesenheitRepository.save(aw);
+                })
+                .orElseThrow(() -> new RuntimeException("Anwesenheit mit der ID: " + id + " wurde nicht gefunden!"));
+
     }
 
     @Override
