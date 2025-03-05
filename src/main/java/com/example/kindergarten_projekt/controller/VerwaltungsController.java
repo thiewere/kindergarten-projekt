@@ -2,9 +2,7 @@ package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TPostleitzahl;
 import com.example.kindergarten_projekt.model.TStandort;
-import com.example.kindergarten_projekt.model.TZahlungsart;
 import com.example.kindergarten_projekt.service.StandortServiceImplement;
-import com.example.kindergarten_projekt.service.BeitraegeServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,15 +17,11 @@ public class VerwaltungsController {
     @Autowired
     private StandortServiceImplement standortServiceImplement;
 
-
-
-
     @GetMapping("/standort")
     public List<TStandort> getAllStandort() {return standortServiceImplement.getAllStandort();}
 
     @GetMapping("/postleitzahl")
     public List<TPostleitzahl> getAllPostleitzahl() {return standortServiceImplement.getAllPostleitzahl();}
-
 
     @PostMapping("/addStandort")
     public TStandort addStandort(@RequestBody TStandort standort) {
@@ -40,6 +34,5 @@ public class VerwaltungsController {
 
         return standortServiceImplement.addPostleitzahl(postleitzahl);
     }
-
 
 }

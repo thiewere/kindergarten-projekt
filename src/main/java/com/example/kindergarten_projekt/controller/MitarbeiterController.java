@@ -6,6 +6,7 @@ import com.example.kindergarten_projekt.service.MitarbeiterServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -44,6 +45,17 @@ public class MitarbeiterController {
     public List<TDienstplan> getAllDienstplan() {
         return mitarbeiterServiceImplement.getAllDienstplan();
     }
+
+    @GetMapping("/getDiensplanById/{id}")
+    public TDienstplan getDiensplanById(@PathVariable int id) {
+        return mitarbeiterServiceImplement.getDienstplanByMitarbeiterId(id);
+    }
+
+    @GetMapping("/getDienstplanByDatum/{datum}")
+    public TDienstplan getDienstplanByDatum(@PathVariable LocalDate datum) {
+       return mitarbeiterServiceImplement.getDienstplanByDienstplanDatum(datum);
+    }
+
     //POST
     @PostMapping("/addDienstplan")
     public TDienstplan addDienstplan(TDienstplan dienstplan) {
