@@ -6,4 +6,22 @@ GET http://localhost:8080/zahlungsart
 
 ###
 # @name add
-POST
+POST http://localhost:8080/addZahlungsart
+[
+{
+    "id": 2,
+    "zahlungsTyp": "Paypal"
+  },
+  {
+    "id": 3,
+    "zahlungsTyp": "Lastschrift"
+  },
+  {
+    "id": 4,
+    "zahlungsTyp": "Barzahlung"
+  },
+  {
+    "id": 102,
+    "zahlungsTyp": "Gutschrift"
+  }
+]
