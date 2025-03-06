@@ -45,7 +45,7 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
 
     @Override
     public TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Integer id) {
-        mitarbeiterRepository.findById(id).map(ma ->{
+        return mitarbeiterRepository.findById(id).map(ma ->{
             ma.setMitarbeiterVorname(mitarbeiter.getMitarbeiterVorname());
             ma.setMitarbeiterNachname(mitarbeiter.getMitarbeiterNachname());
             ma.setMitarbeiterGeburtsdatum(mitarbeiter.getMitarbeiterGeburtsdatum());
@@ -58,7 +58,7 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
             ma.setMitarbeiterGruppe(mitarbeiter.getMitarbeiterGruppe());
             return mitarbeiterRepository.save(ma);
         }).orElseThrow(() -> new RuntimeException("Mitarbeiter nicht gefunden"));
-        return mitarbeiter;
+
     }
 
     //Dienstplan
@@ -92,13 +92,13 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
 
     @Override
     public TDienstplan updateDienstplan(TDienstplan dienstplan, Integer id) {
-        dienstplanRepository.findById(id).map(dp -> {
+        return dienstplanRepository.findById(id).map(dp -> {
             dp.setMitarbeiter(dienstplan.getMitarbeiter());
             dp.setDienstplanDatum(dienstplan.getDienstplanDatum());
             dp.setSchicht_anfang(dienstplan.getSchicht_anfang());
             dp.setSchicht_ende(dienstplan.getSchicht_ende());
             return dienstplanRepository.save(dp);
         }).orElseThrow(() -> new RuntimeException("Dienstplan nicht gefunden"));
-        return dienstplan;
+
     }
 }

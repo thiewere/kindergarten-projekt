@@ -3,10 +3,14 @@ package com.example.kindergarten_projekt.serviceImplement;
 import com.example.kindergarten_projekt.model.TGruppe;
 import com.example.kindergarten_projekt.repository.TGruppeRepository;
 import com.example.kindergarten_projekt.service.GruppeService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class GruppeServiceImplement implements GruppeService {
+
+
     private final TGruppeRepository gruppeRepository;
 
     public GruppeServiceImplement(TGruppeRepository gruppeRepository) {
@@ -29,8 +33,13 @@ public class GruppeServiceImplement implements GruppeService {
     }
 
     @Override
-    public TGruppe updeteGruppeById(Integer id) {
-        return null;
+    public TGruppe updateGruppeById(TGruppe gruppe, Integer id) {
+
+        return gruppeRepository.findById(id).map(gr -> {
+            gr.setGruppeName(gruppe.getGruppeName());
+            gr.setGruppeGroesse(gruppe.getGruppeGroesse());
+            return gruppeRepository.save(gr);
+        }).orElseThrow(() -> new RuntimeException("Gruppe nicht gefunden"));
     }
 
     @Override

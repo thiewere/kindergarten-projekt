@@ -46,7 +46,7 @@ public class MitarbeiterController {
         return mitarbeiterServiceImplement.getAllDienstplan();
     }
 
-    @GetMapping("/getDiensplanById/{id}")
+    @GetMapping("/getDienstplanById/{id}")
     public TDienstplan getDiensplanById(@PathVariable int id) {
         return mitarbeiterServiceImplement.getDienstplanByMitarbeiterId(id);
     }

@@ -24,8 +24,8 @@ public class GruppeController {
         return gruppeServiceImplement.addGruppe(gruppe);
     }
     @PostMapping("/updateGruppe/{id}")
-    public TGruppe updateGruppe(@RequestBody TGruppe gruppe,@PathVariable Integer id){
-        return gruppeServiceImplement.updeteGruppeById(id);
+    public TGruppe updateGruppe(@RequestBody TGruppe gruppe, @PathVariable Integer id){
+        return gruppeServiceImplement.updateGruppeById(gruppe, id);
     }
     @PostMapping("/deleteGruppe/{id}")
     public String deleteGruppeById(@PathVariable Integer id){

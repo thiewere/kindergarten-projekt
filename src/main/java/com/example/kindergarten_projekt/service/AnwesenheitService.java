@@ -14,7 +14,6 @@ public interface AnwesenheitService  {
     List<TAnwesenheit> getAnwesenheitByKinder(TKinder awKind);
     List<TAnwesenheit> getAnwesenheitByDatum(LocalDate datum);
 
-    //List<TAnwesenheit> updateAnwesenheitByKinderId(TAnwesenheit anwesenheit, Integer kinderId);
 
     String deleteAnwesenheitById(Integer id);
 }
