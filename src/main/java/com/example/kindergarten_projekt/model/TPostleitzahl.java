@@ -1,6 +1,9 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "t_postleitzahl")
@@ -11,6 +14,10 @@ public class TPostleitzahl {
 
     @Column(name = "ort", nullable = false, length = 20)
     private String ort;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "standortPlz")
+    private List<TStandort> standort;
 
     public String getPlz() {
         return plz;

@@ -14,11 +14,23 @@ public class StandortController {
     @Autowired
     private StandortServiceImplement standortServiceImplement;
 
+    // TODO: Fehler korrigieren beim Ausgaben von Plz
     @GetMapping("/standort")
-    public List<TStandort> getAllStandort() {return standortServiceImplement.getAllStandort();}
+    public List<TStandort> getAllStandort() {
+        List<TStandort> standortList = standortServiceImplement.getAllStandort();
+        System.out.println("Testttttttttttt");
+        for (TStandort standort : standortList) {
+            System.out.println(standort.getStandortPlz().getPlz());
+
+        }
+
+        return standortServiceImplement.getAllStandort();
+    }
 
     @GetMapping("/postleitzahl")
-    public List<TPostleitzahl> getAllPostleitzahl() {return standortServiceImplement.getAllPostleitzahl();}
+    public List<TPostleitzahl> getAllPostleitzahl() {
+        return standortServiceImplement.getAllPostleitzahl();
+    }
 
     @PostMapping("/addStandort")
     public TStandort addStandort(@RequestBody TStandort standort) {

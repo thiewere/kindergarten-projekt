@@ -11,23 +11,28 @@ import java.util.List;
 public class GruppeController {
     @Autowired
     GruppeServiceImplement gruppeServiceImplement;
+
     @GetMapping("/getAllGruppe")
     public List<TGruppe> getAlltGruppe(){
         return gruppeServiceImplement.getAllGruppe();
     }
+
     @GetMapping("/getGruppe/{id}")
     public TGruppe getGruppeById(@PathVariable Integer id){
         return gruppeServiceImplement.getGruppeById(id);
     }
+
     @PostMapping("/addGruppe")
     public TGruppe addGruppe(@RequestBody TGruppe gruppe) {
         return gruppeServiceImplement.addGruppe(gruppe);
     }
-    @PostMapping("/updateGruppe/{id}")
+
+    @PutMapping("/updateGruppe/{id}")
     public TGruppe updateGruppe(@RequestBody TGruppe gruppe, @PathVariable Integer id){
         return gruppeServiceImplement.updateGruppeById(gruppe, id);
     }
-    @PostMapping("/deleteGruppe/{id}")
+
+    @DeleteMapping("/deleteGruppe/{id}")
     public String deleteGruppeById(@PathVariable Integer id){
         return gruppeServiceImplement.deleteGruppeById(id);
     }
