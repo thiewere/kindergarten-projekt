@@ -24,15 +24,21 @@ public class ElternKinderController {
         return elternKinderServiceImplement.getAllElternKinder();
     }
 
-    @GetMapping("/kinder/{elternId}")
-    public List<TElternKinder> getKinderByEltern(@PathVariable Integer elternId) {
-        return elternKinderServiceImplement.getKinderByElternId(elternId);
+    @GetMapping(("getElternKinderById/{elternKinderId}"))
+    public List<TElternKinder> getElternKinderById(@PathVariable TElternKinderId elternKinderId) {
+        return elternKinderServiceImplement.getElternKinderById(elternKinderId);
     }
 
-    @GetMapping("/eltern/{kindId}")
-    public List<TElternKinder> getElternByKind(@PathVariable Integer kindId) {
-        return elternKinderServiceImplement.getElternByKinderId(kindId);
-    }
+    //TODO: Suche implementieren
+//    @GetMapping("/kinder/{elternId}")
+//    public List<TElternKinder> getKinderByEltern(@PathVariable Integer elternId) {
+//        return elternKinderServiceImplement.getKinderByElternId(elternId);
+//    }
+//
+//    @GetMapping("/eltern/{kindId}")
+//    public List<TElternKinder> getElternByKind(@PathVariable Integer kindId) {
+//        return elternKinderServiceImplement.getElternByKinderId(kindId);
+//    }
 
     //POST
     @PostMapping("/addElternKind")
@@ -40,8 +46,13 @@ public class ElternKinderController {
         return elternKinderServiceImplement.addElternKinderBeziehung(elternKinder);
     }
 
-    @DeleteMapping("/{elternId}/{kindId}")
+    @PostMapping("/delete/{elternKinderId}")
     public void deleteElternKind(@PathVariable TElternKinderId elternKinderId) {
         elternKinderServiceImplement.deleteElternKinder(elternKinderId);
+    }
+
+    @PostMapping("/update/{elternKinderId}")
+    public TElternKinder updateElternKind(@RequestBody TElternKinder elternKinder, @PathVariable TElternKinderId elternKinderId) {
+        return elternKinderServiceImplement.updateElternKinder(elternKinder, elternKinderId);
     }
 }

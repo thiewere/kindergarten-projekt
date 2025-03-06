@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ElternKinderServiceImplement implements ElternKinderService {
 
-    private TElternKinderRepository elternKinderRepository;
+    private final TElternKinderRepository elternKinderRepository;
 
     public ElternKinderServiceImplement(TElternKinderRepository elternKinderRepository) {
         this.elternKinderRepository = elternKinderRepository;
@@ -29,20 +29,22 @@ public class ElternKinderServiceImplement implements ElternKinderService {
 
     @Override
     public List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId) {
-        return elternKinderRepository.findAllById(List.of(elternKinderId));
+        return elternKinderRepository.findByEkId(elternKinderId);
     }
 
-    @Override
-    public List<TElternKinder> getKinderByElternId(Integer elternId) {
-
-        return elternKinderRepository.findByEkElternId(elternId);
-    }
-
-    @Override
-    public List<TElternKinder> getElternByKinderId(Integer kinderId) {
-
-        return elternKinderRepository.findByEkKindId(kinderId);
-    }
+    // TODO: Suche implementieren
+//    @Override
+//    public List<TElternKinder> getKinderByElternId(Integer elternId) {
+//
+//        elterKindId.
+//        return elternKinderRepository.findByEkElternId(elternId);
+//    }
+//
+//    @Override
+//    public List<TElternKinder> getElternByKinderId(Integer kinderId) {
+//
+//        return elternKinderRepository.findByEkKindId(kinderId);
+//    }
 
     @Override
     public TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId) {

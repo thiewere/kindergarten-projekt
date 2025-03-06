@@ -13,11 +13,12 @@ public interface ElternKinderService {
 
     List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId);
 
+    //TODO: Suche implentieren
     //Alle Kinder des Elternteils
-    List<TElternKinder> getKinderByElternId(Integer elternId);
-
-    //Alle Eltern des Kindes
-    List<TElternKinder> getElternByKinderId(Integer kinderId);
+//    List<TElternKinder> getKinderByElternId(TElternKinderId elternId);
+//
+//    //Alle Eltern des Kindes
+//    List<TElternKinder> getElternByKinderId(Integer kinderId);
 
     TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId);
 

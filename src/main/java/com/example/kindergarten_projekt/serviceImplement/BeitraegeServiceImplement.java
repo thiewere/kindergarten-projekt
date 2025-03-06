@@ -36,8 +36,12 @@ public class BeitraegeServiceImplement implements BeitraegeService {
     }
 
     @Override
-    public TZahlungsart updateZahlungsartById(TZahlungsart z, Integer id) {
-        return null;
+    public TZahlungsart updateZahlungsartById(TZahlungsart zahlungsart, Integer id) {
+        return zahlungsartRepository.findById(id)
+                .map(zahl -> {
+                    zahl.setZahlungsTyp(zahlungsart.getZahlungsTyp());
+                    return zahlungsartRepository.save(zahl);
+                }).orElseThrow(() -> new RuntimeException("Zahlungsart nicht gefunden"));
     }
 
     @Override
@@ -66,7 +70,15 @@ public class BeitraegeServiceImplement implements BeitraegeService {
 
     @Override
     public TBeitraege updateBeitragById(TBeitraege beitrag, Integer id) {
-        return null;
+        return beitraegeRepository.findById(id)
+                .map(b -> {
+                    b.setBeitrag(beitrag.getBeitrag());
+                    b.setEltern(beitrag.getEltern());
+                    b.setBezahlt(beitrag.getBezahlt());
+                    b.setZahlungsart(beitrag.getZahlungsart());
+                    b.setZahlungsdatum(beitrag.getZahlungsdatum());
+                    return beitraegeRepository.save(b);
+                }).orElseThrow(() -> new RuntimeException("Beitrag nicht gefunden"));
     }
 
     @Override
