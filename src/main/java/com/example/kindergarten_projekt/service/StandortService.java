@@ -14,5 +14,7 @@ public interface StandortService {
     List<TStandort> getAllStandort();
     List<TPostleitzahl> getAllPostleitzahl();
 
+    TStandort updateStandort(TStandort standort, int id);
+    TPostleitzahl updatePostleitzahl(TPostleitzahl postleitzahl, int plzahl);
 
 }

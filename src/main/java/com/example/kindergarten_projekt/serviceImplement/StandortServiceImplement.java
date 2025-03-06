@@ -42,4 +42,26 @@ public class StandortServiceImplement implements StandortService {
     public List<TPostleitzahl> getAllPostleitzahl() {
         return postleitzahlRepository.findAll();
     }
+
+    @Override
+    public TStandort updateStandort(TStandort standort, int id) {
+        return standortRepository.findById(id)
+                .map(st -> {
+                    st.setStandortName(standort.getStandortName());
+                    st.setStandortTyp(standort.getStandortTyp());
+                    st.setStandortStrasseHausnr(standort.getStandortStrasseHausnr());
+                    st.setStandortPlz(standort.getStandortPlz());
+                    return standortRepository.save(st);
+                }).orElseThrow(() -> new RuntimeException("Standort nicht gefunden"));
+    }
+
+    @Override
+    public TPostleitzahl updatePostleitzahl(TPostleitzahl postleitzahl, int plzahl) {
+        return postleitzahlRepository.findById(plzahl)
+                .map(postzahl -> {
+                    postzahl.setPlz(postleitzahl.getPlz());
+                    postzahl.setOrt(postleitzahl.getOrt());
+                    return postleitzahlRepository.save(postzahl);
+                }).orElseThrow(() -> new RuntimeException("Postleitzahl nicht gefunden"));
+    }
 }
