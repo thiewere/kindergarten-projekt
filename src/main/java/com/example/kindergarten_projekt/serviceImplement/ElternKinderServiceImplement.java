@@ -44,10 +44,15 @@ public class ElternKinderServiceImplement implements ElternKinderService {
         return elternKinderRepository.findByEkKindId(kinderId);
     }
 
-    //TODO
     @Override
-    public TElternKinder updateElternKinder(TElternKinder elternKinder) {
-        return null;
+    public TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId) {
+        elternKinderRepository.findById(elternKinderId).map(ek -> {
+            ek.setEkEltern(elternKinder.getEkEltern());
+            ek.setEkKind(elternKinder.getEkKind());
+            ek.setRolle(elternKinder.getRolle());
+            return elternKinderRepository.save(ek);
+        }).orElseThrow(() -> new RuntimeException("Eltern-Kinder Beziehung nicht gefunden"));
+        return elternKinder;
     }
 
     @Override

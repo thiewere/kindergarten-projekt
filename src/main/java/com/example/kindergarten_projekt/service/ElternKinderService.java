@@ -19,7 +19,7 @@ public interface ElternKinderService {
     //Alle Eltern des Kindes
     List<TElternKinder> getElternByKinderId(Integer kinderId);
 
-    TElternKinder updateElternKinder(TElternKinder elternKinder);
+    TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId);
 
     void deleteElternKinder(TElternKinderId elternKinderId);
 
