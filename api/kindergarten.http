@@ -1,14 +1,65 @@
-# kindergarten
+DELETE http://localhost:8080/deleteKind/2
+Content-Type: application/json
+
+{}
 
 ###
-# @name ausgeben
-GET http://localhost:8080/zahlungsart
-
-###
-# @name add
-POST http://localhost:8080/addZahlungsart
-accept: application/json
+PUT http://localhost:8080/updateKind/2
+Content-Type: application/json
 
 {
-    "zahlungsTyp": "Kreditkarte"
+  "kindVorname": "Helle",
+  "kindNachname": "Jamal Jr. Jr.",
+  "kindGeburtsdatum": "2025-02-15",
+  "besonderheiten": "kann nicht laufen",
+  "gruppe": {
+    "id": 1
   }
+}
+
+###
+GET http://localhost:8080/getKind/2
+Accept: application/json
+
+###
+GET http://localhost:8080/getAllKinder
+Accept: application/json
+
+###
+POST http://localhost:8080/addKind
+Content-Type: application/json
+
+{
+  "kindVorname": "Helle",
+  "kindNachname": "Jamal Jr.",
+  "kindGeburtsdatum": "2025-01-15",
+  "besonderheiten": "gutes Baby",
+  "gruppe": {
+    "id": 1
+  }
+}
+
+###
+GET http://localhost:8080/postleitzahl
+Accept: application/json
+
+###
+POST http://localhost:8080/addPostleitzahl
+Content-Type: application/json
+
+{
+  "plz": "11123",
+  "ort": "Berlin"}
+
+###
+POST http://localhost:8080/addGruppe
+Content-Type: application/json
+
+{
+  "gruppeName": "Sonnenblumen",
+  "gruppeGroesse": 16
+}
+
+###
+GET http://localhost:8080/getAllGruppe
+Accept: application/json
