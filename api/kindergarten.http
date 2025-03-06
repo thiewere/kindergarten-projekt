@@ -1,9 +1,29 @@
+GET http://localhost:8080/eltern/getAllEltern
+Accept: application/json
+
+###
+POST http://localhost:8080/eltern/addEltern
+Content-Type: application/json
+
+{
+  "elternVorname": "Jamal",
+  "elternNachname": "Helle",
+  "elternEmail": "jamalhelle@gmail.com",
+  "elternTelefonnummer": "152658789652",
+  "elternStrasseHausnr": "Charlotenburgestrasse 54",
+  "elternPlz": {
+    "plz": "10258"
+  }
+}
+
+###
 DELETE http://localhost:8080/deleteKind/2
 Content-Type: application/json
 
 {}
 
-###
+###KINDER
+
 PUT http://localhost:8080/updateKind/2
 Content-Type: application/json
 

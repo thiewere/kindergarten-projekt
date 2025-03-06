@@ -19,6 +19,11 @@ public class TPostleitzahl {
     @OneToMany(mappedBy = "standortPlz")
     private List<TStandort> standort;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "elternPlz")
+    private List<TEltern> eltern;
+
+
     public String getPlz() {
         return plz;
     }

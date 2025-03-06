@@ -32,17 +32,17 @@ public class AnwesenheitController {
         return anwesenheitServiceImplement.getAnwesenheitByDatum(datum);
     }
 
-    @GetMapping("/addAnwesenheit")
+    @PostMapping("/addAnwesenheit")
     public TAnwesenheit addAnwesenheit(@RequestBody TAnwesenheit anwesenheit) {
         return anwesenheitServiceImplement.addAnwesenheit(anwesenheit);
     }
 
-    @PostMapping("/updateAnwesenheit/{id}")
+    @PutMapping("/updateAnwesenheit/{id}")
     public TAnwesenheit updateAnwesenheitByKinderId(@RequestBody TAnwesenheit anwesenheit, @PathVariable Integer id) {
         return anwesenheitServiceImplement.updateAnwesenheit(anwesenheit, id);
     }
 
-    @PostMapping("/deleteAnwesenheit/{id}")
+    @DeleteMapping("/deleteAnwesenheit/{id}")
     public  String deleteAnwesenheitByKinderId(@PathVariable Integer id) {
         return anwesenheitServiceImplement.deleteAnwesenheitById(id);
     }
