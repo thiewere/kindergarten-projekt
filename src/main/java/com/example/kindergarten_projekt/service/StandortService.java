@@ -17,4 +17,6 @@ public interface StandortService {
     TStandort updateStandort(TStandort standort, Integer id);
     TPostleitzahl updatePostleitzahl(TPostleitzahl postleitzahl, String plz);
 
+    void deleteStandortById(Integer id);
+    String deletePostleitzahlById(String plz);
 }

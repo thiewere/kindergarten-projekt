@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface TStandortRepository extends JpaRepository<TStandort, Integer> {
+    List<TStandort> id(Integer id);
 
 //    List<TStandort> findByStandortName(String standortName);
 //

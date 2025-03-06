@@ -37,9 +37,21 @@ public class StandortController {
         return standortServiceImplement.addPostleitzahl(postleitzahl);
     }
 
-    @PostMapping("/updatePostleitzahl/{plz}")
+    @PutMapping("/updatePostleitzahl/{plz}")
     public TPostleitzahl updatePostleitzahl(@RequestBody TPostleitzahl postleitzahl, @PathVariable String plz) {
         return standortServiceImplement.updatePostleitzahl(postleitzahl, plz);
+    }
+
+    @DeleteMapping("/deleteStandort/{id}")
+    public TStandort deleteStandortById(@PathVariable Integer id) {
+        standortServiceImplement.deleteStandortById(id);
+        return null;
+    }
+
+    @DeleteMapping("/deletePostleitzahl/{plz}")
+    public TStandort deletePostleitzahlById(@PathVariable String plz) {
+        standortServiceImplement.deletePostleitzahlById(plz);
+        return null;
     }
 
 }
