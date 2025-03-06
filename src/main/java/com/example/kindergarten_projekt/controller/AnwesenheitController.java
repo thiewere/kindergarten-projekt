@@ -44,7 +44,7 @@ public class AnwesenheitController {
 
     @PostMapping("/deleteAnwesenheit/{id}")
     public  String deleteAnwesenheitByKinderId(@PathVariable Integer id) {
-        return "Anwesenheit unter ID: " + id + " wurde gelöscht";
+        return anwesenheitServiceImplement.deleteAnwesenheitById(id);
     }
 
 }
