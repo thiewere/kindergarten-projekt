@@ -1,0 +1,9 @@
+# kindergarten
+
+###
+# @name ausgeben
+GET http://localhost:8080/zahlungsart
+
+###
+# @name add
+POST
