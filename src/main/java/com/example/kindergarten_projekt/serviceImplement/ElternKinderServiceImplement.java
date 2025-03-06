@@ -11,26 +11,26 @@ import java.util.List;
 @Service
 public class ElternKinderServiceImplement implements ElternKinderService {
 
-    private final TElternKinderRepository elternKinderRepository;
+//    private final TElternKinderRepository elternKinderRepository;
+//
+//    public ElternKinderServiceImplement(TElternKinderRepository elternKinderRepository) {
+//        this.elternKinderRepository = elternKinderRepository;
+//    }
+//
+//    @Override
+//    public TElternKinder addElternKinderBeziehung(TElternKinder elternKinder) {
+//        return elternKinderRepository.save(elternKinder);
+//    }
+//
+//    @Override
+//    public List<TElternKinder> getAllElternKinder() {
+//        return elternKinderRepository.findAll();
+//    }
 
-    public ElternKinderServiceImplement(TElternKinderRepository elternKinderRepository) {
-        this.elternKinderRepository = elternKinderRepository;
-    }
-
-    @Override
-    public TElternKinder addElternKinderBeziehung(TElternKinder elternKinder) {
-        return elternKinderRepository.save(elternKinder);
-    }
-
-    @Override
-    public List<TElternKinder> getAllElternKinder() {
-        return elternKinderRepository.findAll();
-    }
-
-    @Override
-    public List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId) {
-        return elternKinderRepository.findByEkId(elternKinderId);
-    }
+//    @Override
+//    public List<TElternKinder> getElternKinderById(TElternKinderId elternKinderId) {
+//        return elternKinderRepository.findByEkId(elternKinderId);
+//    }
 
     // TODO: Suche implementieren
 //    @Override
@@ -46,18 +46,18 @@ public class ElternKinderServiceImplement implements ElternKinderService {
 //        return elternKinderRepository.findByEkKindId(kinderId);
 //    }
 
-    @Override
-    public TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId) {
-        return elternKinderRepository.findById(elternKinderId).map(ek -> {
-            ek.setEkEltern(elternKinder.getEkEltern());
-            ek.setEkKind(elternKinder.getEkKind());
-            ek.setRolle(elternKinder.getRolle());
-            return elternKinderRepository.save(ek);
-        }).orElseThrow(() -> new RuntimeException("Eltern-Kinder Beziehung nicht gefunden"));
-    }
-
-    @Override
-    public void deleteElternKinder(TElternKinderId elternKinderId) {
-        elternKinderRepository.deleteById(elternKinderId);
-    }
+//    @Override
+//    public TElternKinder updateElternKinder(TElternKinder elternKinder, TElternKinderId elternKinderId) {
+//        return elternKinderRepository.findById(elternKinderId).map(ek -> {
+//            ek.setEkEltern(elternKinder.getEkEltern());
+//            ek.setEkKind(elternKinder.getEkKind());
+//            ek.setRolle(elternKinder.getRolle());
+//            return elternKinderRepository.save(ek);
+//        }).orElseThrow(() -> new RuntimeException("Eltern-Kinder Beziehung nicht gefunden"));
+//    }
+//
+//    @Override
+//    public void deleteElternKinder(TElternKinderId elternKinderId) {
+//        elternKinderRepository.deleteById(elternKinderId);
+//    }
 }

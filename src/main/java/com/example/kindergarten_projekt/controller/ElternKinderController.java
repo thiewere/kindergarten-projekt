@@ -18,16 +18,16 @@ public class ElternKinderController {
         this.elternKinderServiceImplement = elternKinderServiceImplement;
     }
 
-    //GET
-    @GetMapping("/getAllElternKinder")
-    public List<TElternKinder> getAllElternKinder() {
-        return elternKinderServiceImplement.getAllElternKinder();
-    }
+//    //GET
+//    @GetMapping("/getAllElternKinder")
+//    public List<TElternKinder> getAllElternKinder() {
+//        return elternKinderServiceImplement.getAllElternKinder();
+//    }
 
-    @GetMapping(("getElternKinderById/{elternKinderId}"))
-    public List<TElternKinder> getElternKinderById(@PathVariable TElternKinderId elternKinderId) {
-        return elternKinderServiceImplement.getElternKinderById(elternKinderId);
-    }
+//    @GetMapping(("getElternKinderById/{elternKinderId}"))
+//    public List<TElternKinder> getElternKinderById(@PathVariable TElternKinderId elternKinderId) {
+//        return elternKinderServiceImplement.getElternKinderById(elternKinderId);
+//    }
 
     //TODO: Suche implementieren
 //    @GetMapping("/kinder/{elternId}")
@@ -40,19 +40,19 @@ public class ElternKinderController {
 //        return elternKinderServiceImplement.getElternByKinderId(kindId);
 //    }
 
-    //POST
-    @PostMapping("/addElternKind")
-    public TElternKinder addElternKind(@RequestBody TElternKinder elternKinder) {
-        return elternKinderServiceImplement.addElternKinderBeziehung(elternKinder);
-    }
+//    //POST
+//    @PostMapping("/addElternKind")
+//    public TElternKinder addElternKind(@RequestBody TElternKinder elternKinder) {
+//        return elternKinderServiceImplement.addElternKinderBeziehung(elternKinder);
+//    }
 
-    @PostMapping("/delete/{elternKinderId}")
-    public void deleteElternKind(@PathVariable TElternKinderId elternKinderId) {
-        elternKinderServiceImplement.deleteElternKinder(elternKinderId);
-    }
+//    @PostMapping("/delete/{elternKinderId}")
+//    public void deleteElternKind(@PathVariable TElternKinderId elternKinderId) {
+//        elternKinderServiceImplement.deleteElternKinder(elternKinderId);
+//    }
 
-    @PostMapping("/update/{elternKinderId}")
-    public TElternKinder updateElternKind(@RequestBody TElternKinder elternKinder, @PathVariable TElternKinderId elternKinderId) {
-        return elternKinderServiceImplement.updateElternKinder(elternKinder, elternKinderId);
-    }
+//    @PostMapping("/update/{elternKinderId}")
+//    public TElternKinder updateElternKind(@RequestBody TElternKinder elternKinder, @PathVariable TElternKinderId elternKinderId) {
+//        return elternKinderServiceImplement.updateElternKinder(elternKinder, elternKinderId);
+//    }
 }

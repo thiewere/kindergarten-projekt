@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 
-public interface TElternKinderRepository extends JpaRepository <TElternKinder, TElternKinderId> {
+public interface TElternKinderRepository extends JpaRepository <TElternKinder, Integer> {
 
-    List<TElternKinder> findByEkId(TElternKinderId elternKinderId);
-    List<TElternKinder> findByEkKindId(Integer kindId);
-    List<TElternKinder> findByEkElternId(Integer elternId);
+//    List<TElternKinder> findByEkId(TElternKinderId elternKinderId);
+//    List<TElternKinder> findByEkKindId(Integer kindId);
+//    List<TElternKinder> findByEkElternId(Integer elternId);
 }

@@ -29,7 +29,7 @@ public class KinderController {
     }
     @PostMapping("/updateKind/{id}")
     public TKinder updateKind(@RequestBody TKinder kinder,@PathVariable Integer id){
-        return kinderServiceImplement.updateKindById(id,kinder);
+        return kinderServiceImplement.updateKindById(kinder,id);
     }
     @PostMapping("/deleteKind/{id}")
     public String deleteKindById(@PathVariable Integer id){
