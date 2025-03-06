@@ -64,4 +64,20 @@ public class StandortServiceImplement implements StandortService {
                     return postleitzahlRepository.save(postzahl);
                 }).orElseThrow(() -> new RuntimeException("Postleitzahl nicht gefunden"));
     }
+
+    @Override
+    public void deleteStandortById(Integer id){
+        standortRepository.deleteById(id);
+    }
+
+    @Override
+    public String deletePostleitzahlById(String plz) {
+        if (!postleitzahlRepository.existsById(plz)) {
+            postleitzahlRepository.deleteById(plz);
+            return "Postleitzahl: " + plz + " wurde nicht gefunden!";
+        }
+        return "Postleitzahl: " + plz + " wurde gelöscht!";
+    }
+
+
 }
