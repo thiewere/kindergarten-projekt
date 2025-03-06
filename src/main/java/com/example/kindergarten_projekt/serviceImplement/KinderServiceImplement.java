@@ -34,7 +34,6 @@ public class KinderServiceImplement implements KinderService {
     public TKinder updateKindById(TKinder kinder, Integer id) {
         return kinderRepository.findById(id)
                 .map(ki -> {
-                    ki.setId(kinder.getId());
                     ki.setGruppe(kinder.getGruppe());
                     ki.setKindVorname(kinder.getKindVorname());
                     ki.setKindNachname(kinder.getKindNachname());

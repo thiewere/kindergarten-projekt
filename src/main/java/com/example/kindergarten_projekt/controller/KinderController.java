@@ -11,6 +11,7 @@ import java.util.List;
 public class KinderController {
     @Autowired
     KinderServiceImplement kinderServiceImplement;
+
     @GetMapping("/getAllKinder")
     public List<TKinder> getAllKinder(){
 
@@ -27,11 +28,11 @@ public class KinderController {
 
         return kinderServiceImplement.addKinder(kinder);
     }
-    @PostMapping("/updateKind/{id}")
+    @PutMapping("/updateKind/{id}")
     public TKinder updateKind(@RequestBody TKinder kinder,@PathVariable Integer id){
         return kinderServiceImplement.updateKindById(kinder,id);
     }
-    @PostMapping("/deleteKind/{id}")
+    @DeleteMapping("/deleteKind/{id}")
     public String deleteKindById(@PathVariable Integer id){
 
         return kinderServiceImplement.deleteKindById(id);

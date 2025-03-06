@@ -1,7 +1,10 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
+
+import java.util.List;
 
 @Entity
 @Table(name = "t_gruppe")
@@ -18,6 +21,10 @@ public class TGruppe {
     @ColumnDefault("0")
     @Column(name = "gruppe_groesse", nullable = false)
     private Integer gruppeGroesse;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "gruppe")
+    private List<TKinder> kinders;
 
     public Integer getId() {
         return id;

@@ -1,5 +1,6 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -13,6 +14,7 @@ public class TKinder {
     @Column(name = "kind_id", nullable = false)
     private Integer id;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "gruppe_id", nullable = false)
     private TGruppe gruppe;
