@@ -1,8 +1,8 @@
 package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TAnwesenheit;
+import com.example.kindergarten_projekt.model.TKinder;
 import com.example.kindergarten_projekt.service.AnwesenheitServiceImplement;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
@@ -20,10 +20,11 @@ public class AnwesenheitController {
     }
 
 
-    @GetMapping("/anwesenheit/{id}")
-    public List<TAnwesenheit> getAnwesenheitByKinderId(@PathVariable Integer id) {
-        return anwesenheitServiceImplement.getAnwesenheitByKinderId(id);
-    }
+    @GetMapping("/anwesenheit/{kind}")
+    public List<TAnwesenheit> getAnwesenheitByKinderId(@PathVariable TKinder kind) {
+
+        return anwesenheitServiceImplement.getAnwesenheitByKinder(kind);
+     }
 
     @GetMapping("/anwesenheit/{datum}")
     public List<TAnwesenheit> getAnwesenheitByDatum(@PathVariable LocalDate datum) {
@@ -37,15 +38,12 @@ public class AnwesenheitController {
 
     @PostMapping("/updateAnwesenheit/{id}")
     public TAnwesenheit updateAnwesenheitByKinderId(@RequestBody TAnwesenheit anwesenheit, @PathVariable Integer id) {
-        return anwesenheitServiceImplement.updateAnwesenheit(anwesenheit);
-    }
-    @PostMapping("/deleteAnwesenheit/{id}")
-    public List<TAnwesenheit> deleteAnwesenheitByKinderId(@PathVariable Integer id) {
-        return anwesenheitServiceImplement.deleteAnwesenheitByKinderId(id);
+        return anwesenheitServiceImplement.updateAnwesenheit(anwesenheit, id);
     }
 
-    @PostMapping("/deleteAnwesenheit/{datum}")
-    public List<TAnwesenheit> deleteAnwesenheitByDatum(@PathVariable LocalDate datum) {
-        return anwesenheitServiceImplement.deleteAnwesenheitByDatum(datum);
+    @PostMapping("/deleteAnwesenheit/{id}")
+    public  String deleteAnwesenheitByKinderId(@PathVariable Integer id) {
+        return "Anwesenheit unter ID: " + id + " wurde gelöscht";
     }
+
 }

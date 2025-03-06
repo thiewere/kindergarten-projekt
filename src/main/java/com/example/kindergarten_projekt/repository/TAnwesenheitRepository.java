@@ -18,4 +18,7 @@ public interface TAnwesenheitRepository extends JpaRepository<TAnwesenheit, Inte
 
     List<TAnwesenheit> removeTAnwesenheitByAwDatum(LocalDate awDatum);
 
+    List<TAnwesenheit> getTAnwesenheitByAwKind(TKinder awKind);
+
+    TKinder id(Integer id);
 }
