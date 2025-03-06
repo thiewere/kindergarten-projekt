@@ -4,10 +4,7 @@ import com.example.kindergarten_projekt.model.TPostleitzahl;
 import com.example.kindergarten_projekt.model.TStandort;
 import com.example.kindergarten_projekt.serviceImplement.StandortServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,10 +26,20 @@ public class StandortController {
         return standortServiceImplement.addStandort(standort);
     }
 
+    @PostMapping("/updateStandort/{id}")
+    public TStandort updateStandort(@RequestBody TStandort standort, @PathVariable Integer id) {
+        return standortServiceImplement.updateStandort(standort, id);
+    }
+
     @PostMapping("/addPostleitzahl")
     public TPostleitzahl addPostleitzahl(@RequestBody TPostleitzahl postleitzahl) {
 
         return standortServiceImplement.addPostleitzahl(postleitzahl);
+    }
+
+    @PostMapping("/updatePostleitzahl/{plz}")
+    public TPostleitzahl updatePostleitzahl(@RequestBody TPostleitzahl postleitzahl, @PathVariable String plz) {
+        return standortServiceImplement.updatePostleitzahl(postleitzahl, plz);
     }
 
 }

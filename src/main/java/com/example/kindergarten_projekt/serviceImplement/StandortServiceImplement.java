@@ -44,7 +44,7 @@ public class StandortServiceImplement implements StandortService {
     }
 
     @Override
-    public TStandort updateStandort(TStandort standort, int id) {
+    public TStandort updateStandort(TStandort standort, Integer id) {
         return standortRepository.findById(id)
                 .map(st -> {
                     st.setStandortName(standort.getStandortName());
@@ -56,7 +56,7 @@ public class StandortServiceImplement implements StandortService {
     }
 
     @Override
-    public TPostleitzahl updatePostleitzahl(TPostleitzahl postleitzahl, int plzahl) {
+    public TPostleitzahl updatePostleitzahl(TPostleitzahl postleitzahl, String plzahl) {
         return postleitzahlRepository.findById(plzahl)
                 .map(postzahl -> {
                     postzahl.setPlz(postleitzahl.getPlz());
