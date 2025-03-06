@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface TElternKinderRepository extends JpaRepository <TElternKinder, TElternKinderId> {
 
+    List<TElternKinder> findByEkId(TElternKinderId elternKinderId);
     List<TElternKinder> findByEkKindId(Integer kindId);
     List<TElternKinder> findByEkElternId(Integer elternId);
 }
