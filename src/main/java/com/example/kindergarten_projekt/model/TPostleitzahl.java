@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "t_postleitzahl")
 public class TPostleitzahl {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "plz", nullable = false, length = 5)
     private String plz;
 

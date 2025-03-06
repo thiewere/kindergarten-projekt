@@ -30,9 +30,14 @@ public class BeitragController {
         return beitraegeServiceImplement.addZahlungsart(zahlungsart);
     }
 
-    @PostMapping("/updateZahlungsart/{id}")
+    @PutMapping("/updateZahlungsart/{id}")
     public TZahlungsart updateZahlungsartById(@RequestBody TZahlungsart zahlungsart, @PathVariable Integer id) {
         return beitraegeServiceImplement.updateZahlungsartById(zahlungsart, id);
+    }
+
+    @DeleteMapping("/deleteZahlungsart/{id}")
+    public String deleteZahlungsartById(@PathVariable Integer id) {
+        return beitraegeServiceImplement.deleteZahlungsartById(id);
     }
 
     // Beitraege Verwaltung
