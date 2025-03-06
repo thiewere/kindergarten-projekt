@@ -1,9 +1,10 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TDienstplan;
 import com.example.kindergarten_projekt.model.TMitarbeiter;
 import com.example.kindergarten_projekt.repository.TDienstplanRepository;
 import com.example.kindergarten_projekt.repository.TMitarbeiterRepository;
+import com.example.kindergarten_projekt.service.MitarbeiterService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -44,7 +45,20 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
 
     @Override
     public TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Integer id) {
-        return null;
+        mitarbeiterRepository.findById(id).map(ma ->{
+            ma.setMitarbeiterVorname(mitarbeiter.getMitarbeiterVorname());
+            ma.setMitarbeiterNachname(mitarbeiter.getMitarbeiterNachname());
+            ma.setMitarbeiterGeburtsdatum(mitarbeiter.getMitarbeiterGeburtsdatum());
+            ma.setMitarbeiterTelefonnummer(mitarbeiter.getMitarbeiterTelefonnummer());
+            ma.setMitarbeiterEmail(mitarbeiter.getMitarbeiterEmail());
+            ma.setMitarbeiterStrasseHausnr(mitarbeiter.getMitarbeiterStrasseHausnr());
+            ma.setMitarbeiterPlz(mitarbeiter.getMitarbeiterPlz());
+            ma.setMitarbeiterRolle(mitarbeiter.getMitarbeiterRolle());
+            ma.setMitarbeiterStandort(mitarbeiter.getMitarbeiterStandort());
+            ma.setMitarbeiterGruppe(mitarbeiter.getMitarbeiterGruppe());
+            return mitarbeiterRepository.save(ma);
+        }).orElseThrow(() -> new RuntimeException("Mitarbeiter nicht gefunden"));
+        return mitarbeiter;
     }
 
     //Dienstplan
@@ -78,6 +92,13 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
 
     @Override
     public TDienstplan updateDienstplan(TDienstplan dienstplan, Integer id) {
-        return null;
+        dienstplanRepository.findById(id).map(dp -> {
+            dp.setMitarbeiter(dienstplan.getMitarbeiter());
+            dp.setDienstplanDatum(dienstplan.getDienstplanDatum());
+            dp.setSchicht_anfang(dienstplan.getSchicht_anfang());
+            dp.setSchicht_ende(dienstplan.getSchicht_ende());
+            return dienstplanRepository.save(dp);
+        }).orElseThrow(() -> new RuntimeException("Dienstplan nicht gefunden"));
+        return dienstplan;
     }
 }

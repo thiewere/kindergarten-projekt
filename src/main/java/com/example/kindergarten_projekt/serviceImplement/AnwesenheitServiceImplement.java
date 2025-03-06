@@ -1,8 +1,9 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TAnwesenheit;
 import com.example.kindergarten_projekt.model.TKinder;
 import com.example.kindergarten_projekt.repository.TAnwesenheitRepository;
+import com.example.kindergarten_projekt.service.AnwesenheitService;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;

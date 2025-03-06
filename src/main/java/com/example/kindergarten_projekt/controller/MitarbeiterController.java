@@ -2,7 +2,7 @@ package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TDienstplan;
 import com.example.kindergarten_projekt.model.TMitarbeiter;
-import com.example.kindergarten_projekt.service.MitarbeiterServiceImplement;
+import com.example.kindergarten_projekt.serviceImplement.MitarbeiterServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

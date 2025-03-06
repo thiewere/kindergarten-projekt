@@ -1,14 +1,15 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TElternKinder;
 import com.example.kindergarten_projekt.model.TElternKinderId;
 import com.example.kindergarten_projekt.repository.TElternKinderRepository;
+import com.example.kindergarten_projekt.service.ElternKinderService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ElternKinderServiceImplement implements ElternKinderService{
+public class ElternKinderServiceImplement implements ElternKinderService {
 
     private TElternKinderRepository elternKinderRepository;
 

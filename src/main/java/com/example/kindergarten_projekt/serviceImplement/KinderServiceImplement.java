@@ -1,7 +1,8 @@
-package com.example.kindergarten_projekt.service;
+package com.example.kindergarten_projekt.serviceImplement;
 
 import com.example.kindergarten_projekt.model.TKinder;
 import com.example.kindergarten_projekt.repository.TKinderRepository;
+import com.example.kindergarten_projekt.service.KinderService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

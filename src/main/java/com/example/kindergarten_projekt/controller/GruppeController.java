@@ -1,7 +1,7 @@
 package com.example.kindergarten_projekt.controller;
 
 import com.example.kindergarten_projekt.model.TGruppe;
-import com.example.kindergarten_projekt.service.GruppeServiceImplement;
+import com.example.kindergarten_projekt.serviceImplement.GruppeServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
