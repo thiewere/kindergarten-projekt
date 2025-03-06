@@ -31,9 +31,19 @@ public class KinderServiceImplement implements KinderService {
     }
 
     @Override
-    public TKinder updateKindById(Integer id, TKinder kinder) {
-        return null;
+    public TKinder updateKindById(TKinder kinder, Integer id) {
+        return kinderRepository.findById(id)
+                .map(ki -> {
+                    ki.setId(kinder.getId());
+                    ki.setGruppe(kinder.getGruppe());
+                    ki.setKindVorname(kinder.getKindVorname());
+                    ki.setKindNachname(kinder.getKindNachname());
+                    ki.setKindGeburtsdatum((kinder.getKindGeburtsdatum()));
+                    ki.setBesonderheiten(kinder.getBesonderheiten());
+                    return kinderRepository.save(ki);
+                }).orElseThrow(() -> new RuntimeException("Kinder mit der ID " + id + " nicht gefunden."));
     }
+
 
     @Override
     public String deleteKindById(Integer id) {
