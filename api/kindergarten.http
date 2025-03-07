@@ -35,14 +35,13 @@ Content-Type: application/json
   }
 }
 
-###
+###DELETE KIND
 DELETE http://localhost:8080/deleteKind/2
 Content-Type: application/json
 
 {}
 
-###KINDER
-
+###UPDATE KIND
 PUT http://localhost:8080/updateKind/2
 Content-Type: application/json
 
@@ -56,15 +55,15 @@ Content-Type: application/json
   }
 }
 
-###
+###GET KIND BY ID
 GET http://localhost:8080/getKind/2
 Accept: application/json
 
-###
+###GET ALL KINDER
 GET http://localhost:8080/getAllKinder
 Accept: application/json
 
-###
+###ADD KIND
 POST http://localhost:8080/addKind
 Content-Type: application/json
 
@@ -82,15 +81,17 @@ Content-Type: application/json
 GET http://localhost:8080/postleitzahl
 Accept: application/json
 
-###
+###ADD PLZ
 POST http://localhost:8080/addPostleitzahl
 Content-Type: application/json
 
 {
   "plz": "11123",
-  "ort": "Berlin"}
+  "ort": "Berlin"
+}
 
-###Gruppe
+
+###ADD GRUPPE
 POST http://localhost:8080/addGruppe
 Content-Type: application/json
 
@@ -99,12 +100,12 @@ Content-Type: application/json
   "gruppeGroesse": 16
 }
 
-###
+###GET ALL GRUPPEN
 GET http://localhost:8080/getAllGruppe
 Accept: application/json
 
 #=======Anwesenheit=======
-###
+###ADD ANWESENHEIT
 POST http://localhost:8080/addAnwesenheit
 Content-Type: application/json
 
@@ -116,19 +117,19 @@ Content-Type: application/json
   "abgeholtUhr": "14:59:59"
 }
 
-###
+###GET ALL ANWESENHEITEN
 GET http://localhost:8080/anwesenheit
 Accept: application/json
 
-###
+###GET ANWENSENHEIT BY KIND
 GET http://localhost:8080/getAnwesenheitByKind/52
 Accept: application/json
 
-###
+###GET ANWESENHEIT BY DATUM
 GET http://localhost:8080/getAnwesenheitByDatum/2025-03-08
 Accept: application/json
 
-###
+###UPDATE ANWESENHEIT
 PUT http://localhost:8080/updateAnwesenheit/2
 Content-Type: application/json
 
@@ -140,6 +141,6 @@ Content-Type: application/json
   "abgeholtUhr": "15:59:59"
 }
 
-###
+###DELETE ANWESENHEIT
 DELETE http://localhost:8080/deleteAnwesenheit/1
 Content-Type: application/json
