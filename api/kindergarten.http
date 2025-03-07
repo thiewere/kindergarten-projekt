@@ -1,7 +1,7 @@
-GET http://localhost:80/api/item?id=99
+GET http://localhost:8080/api/item?id=99
 Accept: application/json
 
-### BEITRAEGE
+### DELETE BEITRAG
 DELETE http://localhost:8080/beitragService/deleteBeitrag/1
 Content-Type: application/json
 
@@ -152,13 +152,18 @@ Content-Type: application/json
   }
 }
 
+###
+DELETE http://localhost:8080/standortService/deletePostleitzahl/"11123"
+Content-Type: application/json
+
 ###Standort
-GET http://localhost:8080/postleitzahl
-Accept: application/json
+GET http://localhost:8080/standortService/postleitzahl
+Content-Type: application/json
 
 ###ADD PLZ
 POST http://localhost:8080/addPostleitzahl
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
+accept: application/json
 
 {
   "plz": "11123",
@@ -171,8 +176,8 @@ POST http://localhost:8080/addGruppe
 Content-Type: application/json
 
 {
-  "gruppeName": "Sonnenblumen",
-  "gruppeGroesse": 16
+  "gruppeName": "Sonderblumen",
+  "gruppeGroesse": 19
 }
 
 ###GET ALL GRUPPEN

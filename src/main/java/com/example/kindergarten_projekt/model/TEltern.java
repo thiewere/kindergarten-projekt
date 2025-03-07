@@ -41,7 +41,7 @@ public class TEltern {
     @Column(name = "eltern_email", nullable = false, length = 30)
     private String elternEmail;
 
-    @JsonManagedReference
+    @JsonBackReference(value = "eltern-beitraege")
     @OneToMany(mappedBy =  "eltern")
     List<TBeitraege> beitraege;
 
