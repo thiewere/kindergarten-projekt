@@ -29,12 +29,12 @@ public class ElternController {
         return elternServiceImplement.addEltern(eltern);
     }
 
-    @PostMapping("/updateEltern/{id}")
+    @PutMapping("/updateEltern/{id}")
     public TEltern updateEltern(@PathVariable Integer id, @RequestBody TEltern eltern) {
         return elternServiceImplement.updateElternById(eltern, id);
     }
 
-    @PostMapping("/deleteEltern/{id}")
+    @DeleteMapping("/deleteEltern/{id}")
     public String deleteEltern(@PathVariable Integer id) {
         return elternServiceImplement.deleteElternById(id);
     }

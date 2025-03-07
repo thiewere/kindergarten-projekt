@@ -1,7 +1,26 @@
+DELETE http://localhost:8080/eltern/deleteEltern/2
+Content-Type: application/json
+
+###UPDATE ELTERN
+PUT http://localhost:8080/eltern/updateEltern/1
+Content-Type: application/json
+
+{
+  "elternVorname": "Angelina",
+  "elternNachname": "Atmatsidou",
+  "elternEmail": "angelina@gmail.com",
+  "elternTelefonnummer": "152658789652",
+  "elternStrasseHausnr": "Wilmersdorferstrasse 54",
+  "elternPlz": {
+    "plz": "10258"
+  }
+}
+
+###GET ALL ELTERN
 GET http://localhost:8080/eltern/getAllEltern
 Accept: application/json
 
-###
+###ADD ELTERN
 POST http://localhost:8080/eltern/addEltern
 Content-Type: application/json
 
