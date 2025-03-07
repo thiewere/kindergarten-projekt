@@ -1,10 +1,12 @@
 package com.example.kindergarten_projekt.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "t_kinder")
@@ -33,6 +35,10 @@ public class TKinder {
     @ColumnDefault("''")
     @Column(name = "besonderheiten", nullable = false, length = 300)
     private String besonderheiten;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "awKind")
+    private List<TAnwesenheit> anwesenheiten;
 
     public Integer getId() {
         return id;

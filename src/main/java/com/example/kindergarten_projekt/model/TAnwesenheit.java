@@ -1,5 +1,6 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class TAnwesenheit {
     @Column(name = "aw_id", nullable = false)
     private Integer id;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "aw_kind_id", nullable = false)
     private TKinder awKind;

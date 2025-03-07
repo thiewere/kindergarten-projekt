@@ -59,7 +59,7 @@ Content-Type: application/json
   }
 }
 
-###
+###Standort
 GET http://localhost:8080/postleitzahl
 Accept: application/json
 
@@ -71,7 +71,7 @@ Content-Type: application/json
   "plz": "11123",
   "ort": "Berlin"}
 
-###
+###Gruppe
 POST http://localhost:8080/addGruppe
 Content-Type: application/json
 
@@ -83,3 +83,44 @@ Content-Type: application/json
 ###
 GET http://localhost:8080/getAllGruppe
 Accept: application/json
+
+#=======Anwesenheit=======
+###
+POST http://localhost:8080/addAnwesenheit
+Content-Type: application/json
+
+{
+  "awKind": {
+    "id": 52
+  },
+  "awDatum": "2025-03-08",
+  "abgeholtUhr": "14:59:59"
+}
+
+###
+GET http://localhost:8080/anwesenheit
+Accept: application/json
+
+###
+GET http://localhost:8080/getAnwesenheitByKind/52
+Accept: application/json
+
+###
+GET http://localhost:8080/getAnwesenheitByDatum/2025-03-08
+Accept: application/json
+
+###
+PUT http://localhost:8080/updateAnwesenheit/2
+Content-Type: application/json
+
+{
+  "awKind": {
+    "id": 52
+  },
+  "awDatum": "2025-03-08",
+  "abgeholtUhr": "15:59:59"
+}
+
+###
+DELETE http://localhost:8080/deleteAnwesenheit/1
+Content-Type: application/json

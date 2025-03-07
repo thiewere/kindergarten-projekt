@@ -21,13 +21,13 @@ public class AnwesenheitController {
     }
 
 
-    @GetMapping("/anwesenheit/{kind}")
+    @GetMapping("/getAnwesenheitByKind/{kind}")
     public List<TAnwesenheit> getAnwesenheitByKinderId(@PathVariable TKinder kind) {
 
         return anwesenheitServiceImplement.getAnwesenheitByKinder(kind);
      }
 
-    @GetMapping("/anwesenheit/{datum}")
+    @GetMapping("/getAnwesenheitByDatum/{datum}")
     public List<TAnwesenheit> getAnwesenheitByDatum(@PathVariable LocalDate datum) {
         return anwesenheitServiceImplement.getAnwesenheitByDatum(datum);
     }
