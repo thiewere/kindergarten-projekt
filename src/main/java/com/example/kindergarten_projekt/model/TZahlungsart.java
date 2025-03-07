@@ -1,7 +1,10 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
+
+import java.util.List;
 
 @Entity
 @Table(name = "t_zahlungsart")
@@ -14,6 +17,10 @@ public class TZahlungsart {
     @ColumnDefault("''")
     @Column(name = "zahlungs_typ", nullable = false, length = 50)
     private String zahlungsTyp;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "zahlungsart")
+    List<TBeitraege> beitraege;
 
     public Integer getId() {
         return id;

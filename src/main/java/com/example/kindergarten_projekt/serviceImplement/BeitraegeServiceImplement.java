@@ -77,6 +77,7 @@ public class BeitraegeServiceImplement implements BeitraegeService {
                     b.setBezahlt(beitrag.getBezahlt());
                     b.setZahlungsart(beitrag.getZahlungsart());
                     b.setZahlungsdatum(beitrag.getZahlungsdatum());
+                    b.setFaelligkeitsdatum(beitrag.getFaelligkeitsdatum());
                     return beitraegeRepository.save(b);
                 }).orElseThrow(() -> new RuntimeException("Beitrag nicht gefunden"));
     }

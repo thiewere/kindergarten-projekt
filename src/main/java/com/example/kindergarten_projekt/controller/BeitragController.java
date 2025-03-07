@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/beitragService")
 public class BeitragController {
 
     @Autowired
     private BeitraegeServiceImplement beitraegeServiceImplement;
 
-    @GetMapping("/zahlungsart")
+    @GetMapping("/getAllZahlungsart")
     public List<TZahlungsart> getAllZahlungsart() {
         return beitraegeServiceImplement.getAllZahlungsart();
     }
@@ -42,7 +43,7 @@ public class BeitragController {
 
     // Beitraege Verwaltung
 
-    @GetMapping("/beitraege")
+    @GetMapping("/getAllbeitrag")
     public List<TBeitraege> getAllBeitraege() {
         return beitraegeServiceImplement.getAllBeitraege();
     }
@@ -57,13 +58,13 @@ public class BeitragController {
         return beitraegeServiceImplement.addBeitrag(beitrag);
     }
 
-    @PostMapping("/updateBeitrag/{id}")
+    @PutMapping("/updateBeitrag/{id}")
     public TBeitraege updateBeitrag(@PathVariable Integer id, @RequestBody TBeitraege beitrag) {
         return beitraegeServiceImplement.updateBeitragById(beitrag, id);
     }
 
-    @PostMapping("/deleteBeitrag/{id}")
+    @DeleteMapping("/deleteBeitrag/{id}")
     public String deleteBeitrag(@PathVariable Integer id) {
-        return beitraegeServiceImplement.deleteZahlungsartById(id);
+        return beitraegeServiceImplement.deleteBeitragById(id);
     }
 }

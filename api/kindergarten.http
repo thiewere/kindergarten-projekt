@@ -1,3 +1,78 @@
+GET http://localhost:80/api/item?id=99
+Accept: application/json
+
+### BEITRAEGE
+DELETE http://localhost:8080/beitragService/deleteBeitrag/1
+Content-Type: application/json
+
+###ZU KORRIGIEREN
+PUT http://localhost:8080/beitragService/updateBeitrag/1
+Content-Type: application/json
+
+{
+  "zahlungsart": {
+    "id": 102
+  },
+  "zahlungsdatum": "2025-03-01",
+  "beitrag": 150,
+  "bezahlt": false,
+  "eltern": {
+    "id": 2
+  }
+}
+
+### ZU KORRIGIEREN
+POST http://localhost:8080/beitragService/addBeitrag
+Content-Type: application/json
+
+{
+  "zahlungsdatum": "2025-01-05",
+  "zahlungsart": {
+    "id": 4
+  },
+  "bezahlt": true,
+  "beitrag": 150,
+  "eltern": {
+    "id": 52
+  },
+  "faelligkeitsdatum": "2025-01-06"
+}
+
+###
+GET http://localhost:8080/beitragService/getAllbeitrag
+Accept: application/json
+
+###ZAHLUNGSART
+DELETE http://localhost:8080/beitragService/deleteZahlungsart/103
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/beitragService/updateZahlungsart/103
+Content-Type: application/json
+
+{
+  "zahlungsTyp": "Paypal"
+}
+
+###
+POST http://localhost:8080/beitragService/addZahlungsart
+Content-Type: application/json
+
+{
+  "zahlungsTyp": "Kreditkarte"
+}
+
+###
+GET http://localhost:8080/beitragService/getZahlungsart/152
+Accept: application/json
+
+###
+GET http://localhost:8080/beitragService/getAllZahlungsart
+Accept: application/json
+
+
+
+###DELETE ELTERN
 DELETE http://localhost:8080/eltern/deleteEltern/2
 Content-Type: application/json
 
