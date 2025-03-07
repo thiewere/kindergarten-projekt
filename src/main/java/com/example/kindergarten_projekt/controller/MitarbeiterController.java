@@ -33,7 +33,14 @@ public class MitarbeiterController {
         return mitarbeiterServiceImplement.addMitarbeiter(mitarbeiter);
     }
 
-    @PostMapping("/deleteMitarbeiter/{id}")
+    //PUT
+    @PutMapping("/updateMitarbeiter/{id}")
+    public TMitarbeiter updateMitarbeiter(@PathVariable Integer id, @RequestBody TMitarbeiter mitarbeiter) {
+        return mitarbeiterServiceImplement.updateMitarbeiter(mitarbeiter, id);
+    }
+
+    //DELETE
+    @DeleteMapping("/deleteMitarbeiter/{id}")
     public TMitarbeiter deleteMitarbeiter(@PathVariable int id) {
         mitarbeiterServiceImplement.deleteMitarbeiterById(id);
         return null;
@@ -47,7 +54,7 @@ public class MitarbeiterController {
     }
 
     @GetMapping("/getDienstplanById/{id}")
-    public TDienstplan getDiensplanById(@PathVariable int id) {
+    public TDienstplan getDienstplanById(@PathVariable int id) {
         return mitarbeiterServiceImplement.getDienstplanByMitarbeiterId(id);
     }
 
@@ -62,10 +69,16 @@ public class MitarbeiterController {
         return mitarbeiterServiceImplement.addDienstplan(dienstplan);
     }
 
-    @PostMapping("/deleteDienstplan/{id}")
+    //PUT
+    @PutMapping("/updateDienstplan/{id}")
+    public TDienstplan updateDienstplan(@PathVariable Integer id, @RequestBody TDienstplan dienstplan) {
+        return mitarbeiterServiceImplement.updateDienstplan(dienstplan, id);
+    }
+
+    //DELETE
+    @DeleteMapping("/deleteDienstplan/{id}")
     public TDienstplan deleteDienstplan(@PathVariable int id) {
         mitarbeiterServiceImplement.deleteDienstplanById(id);
         return null;
     }
-
 }
