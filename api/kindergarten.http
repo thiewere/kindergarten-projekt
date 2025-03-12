@@ -1,3 +1,5 @@
+
+###
 GET http://localhost:8080/api/item?id=99
 Accept: application/json
 
@@ -153,6 +155,19 @@ Content-Type: application/json
   }
 }
 
+###STANDORT
+POST http://localhost:8080/addStandort
+Content-Type: application/json
+
+{
+    "standortPlz": {
+    "plz":"10258"
+      },
+  "standortName": "Lichtenberg",
+  "standortTyp": "Hauptstandort",
+  "standortStrasseHausnr": "Hauptstrasse 54"
+}
+
 ###DELETE PLZ
 DELETE http://localhost:8080/standortService/deletePostleitzahl/"11123"
 Content-Type: application/json
@@ -234,19 +249,19 @@ Content-Type: application/json
 {
   "mitarbeiterVorname": "Max",
   "mitarbeiterNachname": "Mustermann",
-  "mitarbeiterRolle": "Verwalter",
+  "mitarbeiterRolle": "Erzieher",
   "mitarbeiterEmail": "m.mustermann@huehner.de",
-  "mitarbeiterGeburtsdatum": "11-11-2000",
+  "mitarbeiterGeburtsdatum": "2000-11-11",
   "mitarbeiterTelefonnummer": "0123456789",
   "mitarbeiterStrasseHausnr": "Baumweg 11",
   "mitarbeiterPlz": {
-    "plz": "12345"
+    "plz": "10258"
   },
   "mitarbeiterGruppe": {
     "id": 1
   },
   "mitarbeiterStandort": {
-
+    "id": 1
   }
 }
 
