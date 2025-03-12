@@ -1,7 +1,6 @@
 package com.example.kindergarten_projekt.service;
 
 import com.example.kindergarten_projekt.model.TBeitraege;
-import com.example.kindergarten_projekt.model.TKinder;
 import com.example.kindergarten_projekt.model.TZahlungsart;
 
 import java.util.List;
@@ -12,11 +11,11 @@ public interface BeitraegeService {
 
     List<TZahlungsart> getAllZahlungsart();
 
-    TZahlungsart getZahlungsartById(Integer id);
+    TZahlungsart getZahlungsartById(Long id);
 
-    TZahlungsart updateZahlungsartById(TZahlungsart z, Integer id);
+    TZahlungsart updateZahlungsartById(TZahlungsart z, Long id);
 
-    String deleteZahlungsartById(Integer id);
+    String deleteZahlungsartById(Long id);
 
     // Beitraege Verwaltung
 
@@ -24,11 +23,11 @@ public interface BeitraegeService {
 
     List<TBeitraege> getAllBeitraege();
 
-    TBeitraege getBeitragById(Integer id);
+    TBeitraege getBeitragById(Long id);
 
-    TBeitraege updateBeitragById(TBeitraege beitrag, Integer id);
+    TBeitraege updateBeitragById(TBeitraege beitrag, Long id);
 
-    String deleteBeitragById(Integer id);
+    String deleteBeitragById(Long id);
 
 
 }

@@ -6,8 +6,8 @@ import java.util.List;
 public interface KinderService {
     TKinder addKinder(TKinder kinder);
     List<TKinder> getAllKinder();
-    TKinder getKindById(Integer id);
-    TKinder updateKindById(TKinder kinder,Integer id);
-    String deleteKindById(Integer id);
+    TKinder getKindById(Long id);
+    TKinder updateKindById(TKinder kinder, Long id);
+    String deleteKindById(Long id);
 
 }

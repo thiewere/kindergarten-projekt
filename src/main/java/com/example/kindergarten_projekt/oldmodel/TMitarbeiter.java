@@ -1,55 +1,59 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
 
-@Entity
-@Table(name = "t_mitarbeiter")
+//@Entity
+//@Table(name = "t_mitarbeiter")
 public class TMitarbeiter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "mitarbeiter_id")
-    private Long id;
+    @Column(name = "mitarbeiter_id", nullable = false)
+    private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "mitarbeiter_standort_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ColumnDefault("0")
+    @JoinColumn(name = "mitarbeiter_standort_id", nullable = false)
     private TStandort mitarbeiterStandort;
 
-    @ManyToOne
-    @JoinColumn(name = "mitarbeiter_plz")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ColumnDefault("'0'")
+    @JoinColumn(name = "mitarbeiter_plz", nullable = false)
     private TPostleitzahl mitarbeiterPlz;
 
-    @ManyToOne
-    @JoinColumn(name = "mitarbeiter_gruppe_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ColumnDefault("0")
+    @JoinColumn(name = "mitarbeiter_gruppe_id", nullable = false)
     private TGruppe mitarbeiterGruppe;
 
-
-    @Column(name = "mitarbeiter_vorname")
+    @ColumnDefault("'0'")
+    @Column(name = "mitarbeiter_vorname", nullable = false, length = 30)
     private String mitarbeiterVorname;
 
-
-    @Column(name = "mitarbeiter_nachname")
+    @ColumnDefault("'0'")
+    @Column(name = "mitarbeiter_nachname", nullable = false, length = 30)
     private String mitarbeiterNachname;
 
-    @Column(name = "mitarbeiter_geburtsdatum")
+    @Column(name = "mitarbeiter_geburtsdatum", nullable = false)
     private LocalDate mitarbeiterGeburtsdatum;
 
-
-    @Column(name = "mitarbeiter_strasse_hausnr")
+    @ColumnDefault("''")
+    @Column(name = "mitarbeiter_strasse_hausnr", nullable = false, length = 50)
     private String mitarbeiterStrasseHausnr;
 
-
-    @Column(name = "mitarbeiter_telefonnummer")
+    @ColumnDefault("''")
+    @Column(name = "mitarbeiter_telefonnummer", nullable = false, length = 15)
     private String mitarbeiterTelefonnummer;
 
-
-    @Column(name = "mitarbeiter_email")
+    @ColumnDefault("''")
+    @Column(name = "mitarbeiter_email", nullable = false, length = 30)
     private String mitarbeiterEmail;
 
-
-    @Column(name = "mitarbeiter_rolle")
+    @ColumnDefault("''")
+    @Column(name = "mitarbeiter_rolle", nullable = false, length = 30)
     private String mitarbeiterRolle;
 
 
@@ -62,13 +66,12 @@ public class TMitarbeiter {
 //    mitarbeiterTyp varwalter = mitarbeiterTyp.Verwalter;
 
 
-    public TMitarbeiter() {}
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

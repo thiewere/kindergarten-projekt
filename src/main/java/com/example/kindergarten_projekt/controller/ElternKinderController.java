@@ -1,12 +1,8 @@
 package com.example.kindergarten_projekt.controller;
 
-import com.example.kindergarten_projekt.model.TElternKinder;
-import com.example.kindergarten_projekt.model.TElternKinderId;
 import com.example.kindergarten_projekt.serviceImplement.ElternKinderServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:5173")

@@ -29,7 +29,7 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
     }
 
     @Override
-    public TMitarbeiter getMitarbeiterById(Integer id) {
+    public TMitarbeiter getMitarbeiterById(Long id) {
         return mitarbeiterRepository.findById(id).orElseThrow(() -> new RuntimeException("Mitarbeiter nicht gefunden"));
     }
 
@@ -39,7 +39,7 @@ public class MitarbeiterServiceImplement implements MitarbeiterService {
     }
 
     @Override
-    public void deleteMitarbeiterById(Integer id) {
+    public void deleteMitarbeiterById(Long id) {
         mitarbeiterRepository.deleteById(id);
     }
 

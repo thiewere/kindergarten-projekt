@@ -44,7 +44,7 @@ public class StandortServiceImplement implements StandortService {
     }
 
     @Override
-    public TStandort updateStandort(TStandort standort, Integer id) {
+    public TStandort updateStandort(TStandort standort, Long id) {
         return standortRepository.findById(id)
                 .map(st -> {
                     st.setStandortName(standort.getStandortName());

@@ -8,12 +8,12 @@ import java.util.List;
 
 public interface AnwesenheitService  {
     TAnwesenheit addAnwesenheit(TAnwesenheit anwesenheit);
-    TAnwesenheit updateAnwesenheit(TAnwesenheit anwesenheit, Integer anwesenheitId);
+    TAnwesenheit updateAnwesenheit(TAnwesenheit anwesenheit, Long anwesenheitId);
 
     List<TAnwesenheit> getAllAnwesenheit();
     List<TAnwesenheit> getAnwesenheitByKinder(TKinder awKind);
     List<TAnwesenheit> getAnwesenheitByDatum(LocalDate datum);
 
 
-    String deleteAnwesenheitById(Integer id);
+    String deleteAnwesenheitById(Long id);
 }

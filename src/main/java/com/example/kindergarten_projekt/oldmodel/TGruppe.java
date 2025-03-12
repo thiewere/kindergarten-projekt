@@ -1,34 +1,36 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.List;
 
-@Entity
-@Table(name = "t_gruppe")
+//@Entity
+//@Table(name = "t_gruppe")
 public class TGruppe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "gruppe_id")
-    private Long id;
+    @Column(name = "gruppe_id", nullable = false)
+    private Integer id;
 
-    @Column(name = "gruppe_name")
+    @ColumnDefault("'0'")
+    @Column(name = "gruppe_name", nullable = false, length = 20)
     private String gruppeName;
 
-    @Column(name = "gruppe_groesse")
+    @ColumnDefault("0")
+    @Column(name = "gruppe_groesse", nullable = false)
     private Integer gruppeGroesse;
 
-
+    @JsonManagedReference
     @OneToMany(mappedBy = "gruppe")
     private List<TKinder> kinders;
 
-    public TGruppe() {}
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

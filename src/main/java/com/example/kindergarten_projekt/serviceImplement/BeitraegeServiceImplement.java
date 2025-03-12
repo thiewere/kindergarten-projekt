@@ -31,12 +31,12 @@ public class BeitraegeServiceImplement implements BeitraegeService {
     }
 
     @Override
-    public TZahlungsart getZahlungsartById(Integer id) {
+    public TZahlungsart getZahlungsartById(Long id) {
         return zahlungsartRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public TZahlungsart updateZahlungsartById(TZahlungsart zahlungsart, Integer id) {
+    public TZahlungsart updateZahlungsartById(TZahlungsart zahlungsart, Long id) {
         return zahlungsartRepository.findById(id)
                 .map(zahl -> {
                     zahl.setZahlungsTyp(zahlungsart.getZahlungsTyp());
@@ -45,7 +45,7 @@ public class BeitraegeServiceImplement implements BeitraegeService {
     }
 
     @Override
-    public String deleteZahlungsartById(Integer id) {
+    public String deleteZahlungsartById(Long id) {
         if (zahlungsartRepository.existsById(id)) {
             zahlungsartRepository.deleteById(id);
             return "Zahlungsart: " + id + " wurde geloescht!";
@@ -64,12 +64,12 @@ public class BeitraegeServiceImplement implements BeitraegeService {
     }
 
     @Override
-    public TBeitraege getBeitragById(Integer id) {
+    public TBeitraege getBeitragById(Long id) {
         return beitraegeRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public TBeitraege updateBeitragById(TBeitraege beitrag, Integer id) {
+    public TBeitraege updateBeitragById(TBeitraege beitrag, Long id) {
         return beitraegeRepository.findById(id)
                 .map(b -> {
                     b.setBeitrag(beitrag.getBeitrag());
@@ -83,7 +83,7 @@ public class BeitraegeServiceImplement implements BeitraegeService {
     }
 
     @Override
-    public String deleteBeitragById(Integer id) {
+    public String deleteBeitragById(Long id) {
         if (beitraegeRepository.existsById(id)) {
             beitraegeRepository.deleteById(id);
             return "Beitrag mit Id: " + id + " wurde geloescht.";

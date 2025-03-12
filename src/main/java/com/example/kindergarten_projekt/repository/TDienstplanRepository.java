@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;
 
-public interface TDienstplanRepository extends JpaRepository<TDienstplan, Integer> {
+public interface TDienstplanRepository extends JpaRepository<TDienstplan, Long> {
     TDienstplan findByDienstplanDatum(LocalDate dienstplanDate);
 }

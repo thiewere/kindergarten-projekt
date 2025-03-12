@@ -26,12 +26,12 @@ public class KinderServiceImplement implements KinderService {
     }
 
     @Override
-    public TKinder getKindById(Integer id) {
+    public TKinder getKindById(Long id) {
         return kinderRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public TKinder updateKindById(TKinder kinder, Integer id) {
+    public TKinder updateKindById(TKinder kinder, Long id) {
         return kinderRepository.findById(id)
                 .map(ki -> {
                     ki.setGruppe(kinder.getGruppe());
@@ -45,7 +45,7 @@ public class KinderServiceImplement implements KinderService {
 
 
     @Override
-    public String deleteKindById(Integer id) {
+    public String deleteKindById(Long id) {
         kinderRepository.deleteById(id);
         return "";
     }

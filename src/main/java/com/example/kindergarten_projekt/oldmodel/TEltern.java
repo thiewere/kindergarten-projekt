@@ -1,63 +1,55 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.List;
 
-@Entity
-@Table(name = "t_eltern")
+//@Entity
+//@Table(name = "t_eltern")
 public class TEltern {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "eltern_id")
-    private Long id;
+    @Column(name = "eltern_id", nullable = false)
+    private Integer id;
 
-
-    @ManyToOne
-    @JoinColumn(name = "eltern_plz")
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ColumnDefault("'0'")
+    @JoinColumn(name = "eltern_plz", nullable = false)
     private TPostleitzahl elternPlz;
 
-
-    @Column(name = "eltern_vorname")
+    @ColumnDefault("'0'")
+    @Column(name = "eltern_vorname", nullable = false, length = 30)
     private String elternVorname;
 
-
-    @Column(name = "eltern_nachname")
+    @ColumnDefault("'0'")
+    @Column(name = "eltern_nachname", nullable = false, length = 30)
     private String elternNachname;
 
-
-    @Column(name = "eltern_strasse_hausnr")
+    @ColumnDefault("'0'")
+    @Column(name = "eltern_strasse_hausnr", nullable = false, length = 50)
     private String elternStrasseHausnr;
 
-
-    @Column(name = "eltern_telefonnummer")
+    @ColumnDefault("'0'")
+    @Column(name = "eltern_telefonnummer", nullable = false, length = 50)
     private String elternTelefonnummer;
 
-
-    @Column(name = "eltern_email")
+    @ColumnDefault("'0'")
+    @Column(name = "eltern_email", nullable = false, length = 30)
     private String elternEmail;
 
-    @ManyToMany
-    @JoinTable(
-            name = "eltern_kinder",
-            joinColumns = @JoinColumn(name = "eltern_id"),
-            inverseJoinColumns = @JoinColumn(name = "kinder_id")
-    )
-    public List<TKinder> kinder;
-
-
-
-
+    @JsonIgnore
     @OneToMany(mappedBy =  "eltern")
     List<TBeitraege> beitraege;
 
-    public TEltern() {}
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -1,37 +1,35 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
-@Table(name = "t_anwesenheit")
+//@Entity
+//@Table(name = "t_anwesenheit")
 public class TAnwesenheit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "aw_id", nullable = false)
-    private Long id;
+    private Integer id;
 
-    public TAnwesenheit() {}
-
-
-    @ManyToOne
-    @JoinColumn(name = "aw_kind_id")
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "aw_kind_id", nullable = false)
     private TKinder awKind;
 
-    @Column(name = "aw_datum")
+    @Column(name = "aw_datum", nullable = false)
     private LocalDate awDatum;
 
-    @Column(name = "abgeholt_uhr")
+    @Column(name = "abgeholt_uhr", nullable = false)
     private LocalTime abgeholtUhr;
 
-    public Long Id() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

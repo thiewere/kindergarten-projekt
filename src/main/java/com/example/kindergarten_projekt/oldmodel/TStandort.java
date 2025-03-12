@@ -1,37 +1,41 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
-@Entity
-@Table(name = "t_standort")
+//@Entity
+//@Table(name = "t_standort")
 public class TStandort {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "standort_id")
-    private Long id;
+    @Column(name = "standort_id", nullable = false)
+    private Integer id;
 
 
-
-    @ManyToOne
-    @JoinColumn(name = "standort_plz")
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ColumnDefault("'0'")
+    @JoinColumn(name = "standort_plz", nullable = false)
     private TPostleitzahl standortPlz;
 
-    @Column(name = "standort_name")
+    @ColumnDefault("'0'")
+    @Column(name = "standort_name", nullable = false, length = 30)
     private String standortName;
 
-    @Column(name = "standort_typ")
+    @ColumnDefault("'0'")
+    @Column(name = "standort_typ", nullable = false, length = 30)
     private String standortTyp;
 
-    @Column(name = "standort_strasse_hausnr")
+    @ColumnDefault("'0'")
+    @Column(name = "standort_strasse_hausnr", nullable = false, length = 30)
     private String standortStrasseHausnr;
 
-    public TStandort() {}
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

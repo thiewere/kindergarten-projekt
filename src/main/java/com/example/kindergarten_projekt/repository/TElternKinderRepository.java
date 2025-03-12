@@ -1,10 +1,8 @@
 package com.example.kindergarten_projekt.repository;
 
-import com.example.kindergarten_projekt.model.TElternKinder;
-import com.example.kindergarten_projekt.model.TElternKinderId;
+import com.example.kindergarten_projekt.oldmodel.TElternKinder;
+import com.example.kindergarten_projekt.oldmodel.TElternKinderId;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 
 public interface TElternKinderRepository extends JpaRepository <TElternKinder, Integer> {

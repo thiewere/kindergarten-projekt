@@ -1,49 +1,50 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity
-@Table(name = "t_kinder")
+//@Entity
+//@Table(name = "t_kinder")
 public class TKinder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "kind_id")
-    private Long id;
+    @Column(name = "kind_id", nullable = false)
+    private Integer id;
 
-
-    @ManyToOne
-    @JoinColumn(name = "gruppe_id")
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "gruppe_id", nullable = false)
     private TGruppe gruppe;
 
-    @Column(name = "kind_vorname")
+    @ColumnDefault("''")
+    @Column(name = "kind_vorname", nullable = false, length = 30)
     private String kindVorname;
 
-
-    @Column(name = "kind_nachname")
+    @ColumnDefault("''")
+    @Column(name = "kind_nachname", nullable = false, length = 30)
     private String kindNachname;
 
-    @Column(name = "kind_geburtsdatum")
+    @Column(name = "kind_geburtsdatum", nullable = false)
     private LocalDate kindGeburtsdatum;
 
-
-    @Column(name = "besonderheiten")
+    @ColumnDefault("''")
+    @Column(name = "besonderheiten", nullable = false, length = 300)
     private String besonderheiten;
 
-
+    @JsonManagedReference
     @OneToMany(mappedBy = "awKind")
     private List<TAnwesenheit> anwesenheiten;
 
-
-    public TKinder() {}
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

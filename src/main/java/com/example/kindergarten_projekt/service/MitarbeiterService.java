@@ -10,19 +10,19 @@ public interface MitarbeiterService {
 
     // Mitarbeiter Services
     List<TMitarbeiter> getAllMitarbeiter();
-    TMitarbeiter getMitarbeiterById(Integer id);
+    TMitarbeiter getMitarbeiterById(Long id);
     TMitarbeiter addMitarbeiter(TMitarbeiter mitarbeiter);
-    void deleteMitarbeiterById(Integer id);
-    TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Integer id);
+    void deleteMitarbeiterById(Long id);
+    TMitarbeiter updateMitarbeiter(TMitarbeiter mitarbeiter, Long id);
 
 
 
     // Dienstplan Services
     List<TDienstplan> getAllDienstplan();
-    TDienstplan getDienstplanByMitarbeiterId(Integer mitarbeiterId);
+    TDienstplan getDienstplanByMitarbeiterId(Long mitarbeiterId);
     TDienstplan getDienstplanByDienstplanDatum(LocalDate dienstplanDatum);
     TDienstplan addDienstplan(TDienstplan dienstplan);
-    void deleteDienstplanById(Integer id);
-    TDienstplan updateDienstplan(TDienstplan dienstplan, Integer id);
+    void deleteDienstplanById(Long id);
+    TDienstplan updateDienstplan(TDienstplan dienstplan, Long id);
 
 }

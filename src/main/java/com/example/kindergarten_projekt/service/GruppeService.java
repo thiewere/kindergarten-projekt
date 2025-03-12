@@ -7,8 +7,8 @@ import java.util.List;
 public interface GruppeService {
     TGruppe addGruppe(TGruppe gruppe);
     List<TGruppe> getAllGruppe();
-    TGruppe getGruppeById(Integer id);
-    TGruppe updateGruppeById(TGruppe gruppe, Integer id);
-    String deleteGruppeById(Integer id);
+    TGruppe getGruppeById(Long id);
+    TGruppe updateGruppeById(TGruppe gruppe, Long id);
+    String deleteGruppeById(Long id);
 
 }

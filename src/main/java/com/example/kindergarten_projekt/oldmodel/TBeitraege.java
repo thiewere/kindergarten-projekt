@@ -1,48 +1,48 @@
-package com.example.kindergarten_projekt.model;
+package com.example.kindergarten_projekt.oldmodel;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "t_beitraege")
+//@Entity
+//@Table(name = "t_beitraege")
 public class TBeitraege {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "beitrag_id")
-    private Long id;
+    @Column(name = "beitrag_id", nullable = false)
+    private Integer id;
 
-
-    @ManyToOne
-    @JoinColumn(name = "eltern_id")
+    @JsonBackReference("beitraege-eltern")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "eltern_id", nullable = false)
     private TEltern eltern;
 
-
-    @ManyToOne
-    @JoinColumn(name = "zahlungsart_id")
+    @JsonBackReference("beitraege-zahlungsart")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "zahlungsart_id", nullable = false)
     private TZahlungsart zahlungsart;
 
-
-    @Column(name = "beitrag")
+    @ColumnDefault("0")
+    @Column(name = "beitrag", nullable = false)
     private Double beitrag;
 
-
-    @Column(name = "bezahlt")
+    @ColumnDefault("b'0'")
+    @Column(name = "bezahlt", nullable = false)
     private Boolean bezahlt = false;
 
-    @Column(name = "faelligkeitsdatum")
+    @Column(name = "faelligkeitsdatum", nullable = false)
     private LocalDate faelligkeitsdatum;
 
-    @Column(name = "zahlungsdatum")
+    @Column(name = "zahlungsdatum", nullable = false)
     private LocalDate zahlungsdatum;
 
-    public TBeitraege() {}
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

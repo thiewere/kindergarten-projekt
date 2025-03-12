@@ -10,9 +10,9 @@ public interface ElternService {
 
     List<TEltern> getAllElterns();
 
-    TEltern getElternById(Integer id);
+    TEltern getElternById(Long id);
 
-    TEltern updateElternById(TEltern eltern, Integer id);
+    TEltern updateElternById(TEltern eltern, Long id);
 
-    String deleteElternById(Integer id);
+    String deleteElternById(Long id);
 }

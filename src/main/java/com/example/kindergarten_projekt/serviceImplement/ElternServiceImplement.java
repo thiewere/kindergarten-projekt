@@ -28,12 +28,12 @@ public class ElternServiceImplement implements ElternService {
     }
 
     @Override
-    public TEltern getElternById(Integer id) {
+    public TEltern getElternById(Long id) {
         return elternRepository.findById(id).orElseThrow(() -> new RuntimeException("Eltern not found"));
     }
 
     @Override
-    public TEltern updateElternById(TEltern eltern, Integer id) {
+    public TEltern updateElternById(TEltern eltern, Long id) {
         return elternRepository.findById(id)
                 .map(elt -> {
                     elt.setElternVorname(eltern.getElternVorname());
@@ -47,7 +47,7 @@ public class ElternServiceImplement implements ElternService {
     }
 
     @Override
-    public String deleteElternById(Integer id) {
+    public String deleteElternById(Long id) {
         if (elternRepository.existsById(id)) {
             elternRepository.deleteById(id);
             return "Eltern with id " + id + " wurde geloescht";
