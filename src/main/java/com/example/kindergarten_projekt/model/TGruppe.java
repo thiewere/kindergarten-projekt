@@ -1,5 +1,6 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -25,6 +26,10 @@ public class TGruppe {
     @JsonManagedReference
     @OneToMany(mappedBy = "gruppe")
     private List<TKinder> kinders;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "mitarbeiterGruppe")
+    private List<TMitarbeiter> mitarbeiter;
 
     public Integer getId() {
         return id;

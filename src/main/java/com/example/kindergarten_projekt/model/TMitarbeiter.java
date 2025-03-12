@@ -1,5 +1,7 @@
 package com.example.kindergarten_projekt.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -14,16 +16,19 @@ public class TMitarbeiter {
     @Column(name = "mitarbeiter_id", nullable = false)
     private Integer id;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("0")
     @JoinColumn(name = "mitarbeiter_standort_id", nullable = false)
     private TStandort mitarbeiterStandort;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("'0'")
     @JoinColumn(name = "mitarbeiter_plz", nullable = false)
     private TPostleitzahl mitarbeiterPlz;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @ColumnDefault("0")
     @JoinColumn(name = "mitarbeiter_gruppe_id", nullable = false)
