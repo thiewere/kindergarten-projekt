@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:5173")
 @RequestMapping("/mitarbeiter")
 public class MitarbeiterController {
 
