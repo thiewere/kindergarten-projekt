@@ -155,7 +155,7 @@ Content-Type: application/json
   }
 }
 
-###STANDORT
+###ADD STANDORT
 POST http://localhost:8080/addStandort
 Content-Type: application/json
 
@@ -167,6 +167,40 @@ Content-Type: application/json
   "standortTyp": "Hauptstandort",
   "standortStrasseHausnr": "Hauptstrasse 54"
 }
+
+###ADD STANDORT 2
+POST http://localhost:8080/addStandort
+Content-Type: application/json
+
+{
+  "standortPlz": {
+    "plz":"1111"
+  },
+  "standortName": "Neuköln",
+  "standortTyp": "Niederlassung",
+  "standortStrasseHausnr": "Niederstrasse 54"
+}
+
+###GET ALL STANDORT
+GET http://localhost:8080/standort
+Accept: application/json
+
+###UPDATE STANDORT
+PUT http://localhost:8080/updateStandort/2
+Content-Type: application/json
+
+{
+  "standortPlz": {
+    "plz":"10258"
+  },
+  "standortName": "Lichtenberg",
+  "standortTyp": "Oberhauptstandort",
+  "standortStrasseHausnr": "Hauptstrasse 54"
+}
+
+###DELETE STANDORT
+DELETE http://localhost:8080/deleteStandort/2
+Content-Type: application/json
 
 ###DELETE PLZ
 DELETE http://localhost:8080/standortService/deletePostleitzahl/"11123"
@@ -182,7 +216,7 @@ Content-Type: application/json;charset=UTF-8
 accept: application/json
 
 {
-  "plz": "11123",
+  "plz": "10258",
   "ort": "Berlin"
 }
 
@@ -192,7 +226,7 @@ POST http://localhost:8080/addGruppe
 Content-Type: application/json
 
 {
-  "gruppeName": "Sonderblumen",
+  "gruppeName": "Verwalter",
   "gruppeGroesse": 19
 }
 
@@ -261,7 +295,30 @@ Content-Type: application/json
     "id": 1
   },
   "mitarbeiterStandort": {
-    "id": 1
+    "id": 52
+  }
+}
+
+###ADD MITARBEITER 2
+POST http://localhost:8080/mitarbeiter/addMitarbeiter
+Content-Type: application/json
+
+{
+  "mitarbeiterVorname": "Maria",
+  "mitarbeiterNachname": "Mustermann",
+  "mitarbeiterRolle": "Verwalter",
+  "mitarbeiterEmail": "m.mustermann@huehner.de",
+  "mitarbeiterGeburtsdatum": "2000-11-11",
+  "mitarbeiterTelefonnummer": "0123456789",
+  "mitarbeiterStrasseHausnr": "Baumweg 11",
+  "mitarbeiterPlz": {
+    "plz": "10258"
+  },
+  "mitarbeiterGruppe": {
+    "id": 52
+  },
+  "mitarbeiterStandort": {
+    "id": 52
   }
 }
 
@@ -274,30 +331,30 @@ GET http://localhost:8080/mitarbeiter/getMitarbeiter/1
 Accept: application/json
 
 ###UPDATE MITARBEITER
-PUT http://localhost:8080/mitarbeiter/updateMitarbeiter/1
+PUT http://localhost:8080/mitarbeiter/updateMitarbeiter/3
 Content-Type: application/json
 
 {
-  "mitarbeiterVorname": "",
-  "mitarbeiterNachname": "",
-  "mitarbeiterRolle": "",
-  "mitarbeiterEmail": "",
-  "mitarbeiterGeburtsdatum": "",
-  "mitarbeiterTelefonnummer": "",
-  "mitarbeiterStrasseHausnr": "",
+  "mitarbeiterVorname": "Mariaiaiaia",
+  "mitarbeiterNachname": "Mustermann",
+  "mitarbeiterRolle": "Erzieher",
+  "mitarbeiterEmail": "m.mustermann@huehner.de",
+  "mitarbeiterGeburtsdatum": "2000-11-11",
+  "mitarbeiterTelefonnummer": "0123456789",
+  "mitarbeiterStrasseHausnr": "Baumweg 11",
   "mitarbeiterPlz": {
-    "plz": "11111"
+    "plz": "10258"
   },
   "mitarbeiterGruppe": {
     "id": 1
   },
   "mitarbeiterStandort": {
-
+    "id": 52
   }
 }
 
 ###DELETE MITARBEITER
-DELETE http://localhost:8080/mitarbeiter/deleteMitarbeiter/1
+DELETE http://localhost:8080/mitarbeiter/deleteMitarbeiter/2
 Accept: application/json
 
 ###

@@ -22,12 +22,9 @@ public class StandortController {
         System.out.println("Testttttttttttt");
         for (TStandort standort : standortList) {
             System.out.println(standort.getStandortPlz().getPlz());
-
         }
-
         return standortServiceImplement.getAllStandort();
     }
-
 
     @PostMapping("/addStandort")
     public TStandort addStandort(@RequestBody TStandort standort) {
