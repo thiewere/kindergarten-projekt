@@ -143,20 +143,20 @@ POST http://localhost:8080/addKind
 Content-Type: application/json
 
 {
-  "kindVorname": "Helle",
-  "kindNachname": "Jamal Jr.",
-  "kindGeburtsdatum": "2025-01-15",
+  "kindVorname": "Ousmane Jr.",
+  "kindNachname": "Sow",
+  "kindGeburtsdatum": "2025-03-12",
   "besonderheiten": "gutes Baby",
   "gruppe": {
     "id": 1
   }
 }
 
-###
+###DELETE PLZ
 DELETE http://localhost:8080/standortService/deletePostleitzahl/"11123"
 Content-Type: application/json
 
-###Standort
+###GET ALL PLZ
 GET http://localhost:8080/standortService/postleitzahl
 Content-Type: application/json
 
@@ -224,3 +224,64 @@ Content-Type: application/json
 ###DELETE ANWESENHEIT
 DELETE http://localhost:8080/deleteAnwesenheit/1
 Content-Type: application/json
+
+#========Mitarbeiter==========
+###ADD MITARBEITER
+POST http://localhost:8080/mitarbeiter/addMitarbeiter
+Content-Type: application/json
+
+{
+  "mitarbeiterVorname": "Max",
+  "mitarbeiterNachname": "Mustermann",
+  "mitarbeiterRolle": "Verwalter",
+  "mitarbeiterEmail": "m.mustermann@huehner.de",
+  "mitarbeiterGeburtsdatum": "11-11-2000",
+  "mitarbeiterTelefonnummer": "0123456789",
+  "mitarbeiterStrasseHausnr": "Baumweg 11",
+  "mitarbeiterPlz": {
+    "plz": "12345"
+  },
+  "mitarbeiterGruppe": {
+    "id": 1
+  },
+  "mitarbeiterStandort": {
+
+  }
+}
+
+###GET ALL MITARBEITER
+GET http://localhost:8080/mitarbeiter/getAllMitarbeiter
+Accept: application/json
+
+###GET MITARBEITER BY ID
+GET http://localhost:8080/mitarbeiter/getMitarbeiter/1
+Accept: application/json
+
+###UPDATE MITARBEITER
+PUT http://localhost:8080/mitarbeiter/updateMitarbeiter/1
+Content-Type: application/json
+
+{
+  "mitarbeiterVorname": "",
+  "mitarbeiterNachname": "",
+  "mitarbeiterRolle": "",
+  "mitarbeiterEmail": "",
+  "mitarbeiterGeburtsdatum": "",
+  "mitarbeiterTelefonnummer": "",
+  "mitarbeiterStrasseHausnr": "",
+  "mitarbeiterPlz": {
+    "plz": "11111"
+  },
+  "mitarbeiterGruppe": {
+    "id": 1
+  },
+  "mitarbeiterStandort": {
+
+  }
+}
+
+###DELETE MITARBEITER
+DELETE http://localhost:8080/mitarbeiter/deleteMitarbeiter/1
+Accept: application/json
+
+###
