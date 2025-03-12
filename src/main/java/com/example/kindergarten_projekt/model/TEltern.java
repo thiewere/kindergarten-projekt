@@ -1,6 +1,7 @@
 package com.example.kindergarten_projekt.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -41,7 +42,7 @@ public class TEltern {
     @Column(name = "eltern_email", nullable = false, length = 30)
     private String elternEmail;
 
-    @JsonBackReference(value = "eltern-beitraege")
+    @JsonIgnore
     @OneToMany(mappedBy =  "eltern")
     List<TBeitraege> beitraege;
 

@@ -1,6 +1,7 @@
 package com.example.kindergarten_projekt.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -19,7 +20,7 @@ public class TZahlungsart {
     @Column(name = "zahlungs_typ", nullable = false, length = 50)
     private String zahlungsTyp;
 
-    @JsonBackReference(value = "beitraege-zahlungsart")
+    @JsonIgnore
     @OneToMany(mappedBy = "zahlungsart")
     List<TBeitraege> beitraege;
 

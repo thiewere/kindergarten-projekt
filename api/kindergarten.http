@@ -6,19 +6,20 @@ DELETE http://localhost:8080/beitragService/deleteBeitrag/1
 Content-Type: application/json
 
 ###ZU KORRIGIEREN
-PUT http://localhost:8080/beitragService/updateBeitrag/1
+PUT http://localhost:8080/beitragService/updateBeitrag/152
 Content-Type: application/json
 
 {
   "zahlungsart": {
-    "id": 102
+    "id": 4
   },
   "zahlungsdatum": "2025-03-01",
-  "beitrag": 150,
+  "beitrag": 100,
   "bezahlt": false,
   "eltern": {
-    "id": 2
-  }
+    "id": 102
+  },
+  "faelligkeitsdatum": "2025-01-06"
 }
 
 ### ZU KORRIGIEREN
