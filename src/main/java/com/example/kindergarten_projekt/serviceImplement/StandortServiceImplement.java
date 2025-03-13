@@ -66,7 +66,7 @@ public class StandortServiceImplement implements StandortService {
     }
 
     @Override
-    public void deleteStandortById(Integer id){
+    public void deleteStandortById(Long id){
         standortRepository.deleteById(id);
     }
 

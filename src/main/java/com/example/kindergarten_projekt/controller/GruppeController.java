@@ -19,7 +19,7 @@ public class GruppeController {
     }
 
     @GetMapping("/getGruppe/{id}")
-    public TGruppe getGruppeById(@PathVariable Integer id){
+    public TGruppe getGruppeById(@PathVariable Long id){
         return gruppeServiceImplement.getGruppeById(id);
     }
 
@@ -29,12 +29,12 @@ public class GruppeController {
     }
 
     @PutMapping("/updateGruppe/{id}")
-    public TGruppe updateGruppe(@RequestBody TGruppe gruppe, @PathVariable Integer id){
+    public TGruppe updateGruppe(@RequestBody TGruppe gruppe, @PathVariable Long id){
         return gruppeServiceImplement.updateGruppeById(gruppe, id);
     }
 
     @DeleteMapping("/deleteGruppe/{id}")
-    public String deleteGruppeById(@PathVariable Integer id){
+    public String deleteGruppeById(@PathVariable Long id){
         return gruppeServiceImplement.deleteGruppeById(id);
     }
 }

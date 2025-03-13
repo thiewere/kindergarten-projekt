@@ -21,7 +21,7 @@ public class ElternController {
     }
 
     @GetMapping("/getEltern/{id}")
-    public TEltern getEltern(@PathVariable Integer id) {
+    public TEltern getEltern(@PathVariable Long id) {
         return elternServiceImplement.getElternById(id);
     }
 
@@ -31,12 +31,12 @@ public class ElternController {
     }
 
     @PutMapping("/updateEltern/{id}")
-    public TEltern updateEltern(@PathVariable Integer id, @RequestBody TEltern eltern) {
+    public TEltern updateEltern(@PathVariable Long id, @RequestBody TEltern eltern) {
         return elternServiceImplement.updateElternById(eltern, id);
     }
 
     @DeleteMapping("/deleteEltern/{id}")
-    public String deleteEltern(@PathVariable Integer id) {
+    public String deleteEltern(@PathVariable Long id) {
         return elternServiceImplement.deleteElternById(id);
     }
 

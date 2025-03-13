@@ -42,7 +42,7 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
 
 
     @Override
-    public String deleteAnwesenheitById(Integer id) {
+    public String deleteAnwesenheitById(Long id) {
         if(anwesenheitRepository.existsById(id)) {
             anwesenheitRepository.deleteById(id);
             return "Anwesenheit mit der ID: " + id + " wurde gelöscht!";
@@ -52,7 +52,7 @@ public class AnwesenheitServiceImplement implements AnwesenheitService {
 
 
     @Override
-    public TAnwesenheit updateAnwesenheit(TAnwesenheit anwesenheit, Integer id) {
+    public TAnwesenheit updateAnwesenheit(TAnwesenheit anwesenheit, Long id) {
         return anwesenheitRepository.findById(id)
                 .map(aw -> {
                     aw.setAwDatum(anwesenheit.getAwDatum());

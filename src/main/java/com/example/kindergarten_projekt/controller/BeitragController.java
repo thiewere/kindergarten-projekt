@@ -22,7 +22,7 @@ public class BeitragController {
     }
 
     @GetMapping("/getZahlungsart/{id}")
-    public TZahlungsart getZahlungsartById(@PathVariable Integer id) {
+    public TZahlungsart getZahlungsartById(@PathVariable Long id) {
         return beitraegeServiceImplement.getZahlungsartById(id);
     }
 
@@ -33,12 +33,12 @@ public class BeitragController {
     }
 
     @PutMapping("/updateZahlungsart/{id}")
-    public TZahlungsart updateZahlungsartById(@RequestBody TZahlungsart zahlungsart, @PathVariable Integer id) {
+    public TZahlungsart updateZahlungsartById(@RequestBody TZahlungsart zahlungsart, @PathVariable Long id) {
         return beitraegeServiceImplement.updateZahlungsartById(zahlungsart, id);
     }
 
     @DeleteMapping("/deleteZahlungsart/{id}")
-    public String deleteZahlungsartById(@PathVariable Integer id) {
+    public String deleteZahlungsartById(@PathVariable Long id) {
         return beitraegeServiceImplement.deleteZahlungsartById(id);
     }
 
@@ -50,7 +50,7 @@ public class BeitragController {
     }
 
     @GetMapping("/getBeitrag/{id}")
-    public TBeitraege getBeitrag(@PathVariable Integer id) {
+    public TBeitraege getBeitrag(@PathVariable Long id) {
         return beitraegeServiceImplement.getBeitragById(id);
     }
 
@@ -60,12 +60,12 @@ public class BeitragController {
     }
 
     @PutMapping("/updateBeitrag/{id}")
-    public TBeitraege updateBeitrag(@PathVariable Integer id, @RequestBody TBeitraege beitrag) {
+    public TBeitraege updateBeitrag(@PathVariable Long id, @RequestBody TBeitraege beitrag) {
         return beitraegeServiceImplement.updateBeitragById(beitrag, id);
     }
 
     @DeleteMapping("/deleteBeitrag/{id}")
-    public String deleteBeitrag(@PathVariable Integer id) {
+    public String deleteBeitrag(@PathVariable Long id) {
         return beitraegeServiceImplement.deleteBeitragById(id);
     }
 }

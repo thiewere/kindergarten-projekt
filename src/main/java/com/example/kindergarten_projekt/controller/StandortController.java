@@ -33,12 +33,12 @@ public class StandortController {
     }
 
     @PutMapping("/updateStandort/{id}")
-    public TStandort updateStandort(@RequestBody TStandort standort, @PathVariable Integer id) {
+    public TStandort updateStandort(@RequestBody TStandort standort, @PathVariable Long id) {
         return standortServiceImplement.updateStandort(standort, id);
     }
 
     @DeleteMapping("/deleteStandort/{id}")
-    public TStandort deleteStandortById(@PathVariable Integer id) {
+    public TStandort deleteStandortById(@PathVariable Long id) {
         standortServiceImplement.deleteStandortById(id);
         return null;
     }

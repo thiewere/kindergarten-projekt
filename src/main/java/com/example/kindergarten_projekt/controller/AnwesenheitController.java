@@ -39,12 +39,12 @@ public class AnwesenheitController {
     }
 
     @PutMapping("/updateAnwesenheit/{id}")
-    public TAnwesenheit updateAnwesenheitByKinderId(@RequestBody TAnwesenheit anwesenheit, @PathVariable Integer id) {
+    public TAnwesenheit updateAnwesenheitByKinderId(@RequestBody TAnwesenheit anwesenheit, @PathVariable Long id) {
         return anwesenheitServiceImplement.updateAnwesenheit(anwesenheit, id);
     }
 
     @DeleteMapping("/deleteAnwesenheit/{id}")
-    public  String deleteAnwesenheitByKinderId(@PathVariable Integer id) {
+    public  String deleteAnwesenheitByKinderId(@PathVariable Long id) {
         return anwesenheitServiceImplement.deleteAnwesenheitById(id);
     }
 

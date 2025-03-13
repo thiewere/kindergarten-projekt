@@ -28,12 +28,12 @@ public class GruppeServiceImplement implements GruppeService {
     }
 
     @Override
-    public TGruppe getGruppeById(Integer id) {
+    public TGruppe getGruppeById(Long id) {
         return gruppeRepository.findById(id).orElseThrow();
     }
 
     @Override
-    public TGruppe updateGruppeById(TGruppe gruppe, Integer id) {
+    public TGruppe updateGruppeById(TGruppe gruppe, Long id) {
 
         return gruppeRepository.findById(id).map(gr -> {
             gr.setGruppeName(gruppe.getGruppeName());
@@ -43,7 +43,7 @@ public class GruppeServiceImplement implements GruppeService {
     }
 
     @Override
-    public String deleteGruppeById(Integer id) {
+    public String deleteGruppeById(Long id) {
         gruppeRepository.deleteById(id);
         return "";
     }

@@ -24,7 +24,7 @@ public class MitarbeiterController {
         return mitarbeiterServiceImplement.getAllMitarbeiter();
     }
     @GetMapping("/getMitarbeiter/{id}")
-    public TMitarbeiter getMitarbeiterById(@PathVariable Integer id) {
+    public TMitarbeiter getMitarbeiterById(@PathVariable Long id) {
         return mitarbeiterServiceImplement.getMitarbeiterById(id);
     }
 
@@ -36,13 +36,13 @@ public class MitarbeiterController {
 
     //PUT
     @PutMapping("/updateMitarbeiter/{id}")
-    public TMitarbeiter updateMitarbeiter(@PathVariable Integer id, @RequestBody TMitarbeiter mitarbeiter) {
+    public TMitarbeiter updateMitarbeiter(@PathVariable Long id, @RequestBody TMitarbeiter mitarbeiter) {
         return mitarbeiterServiceImplement.updateMitarbeiter(mitarbeiter, id);
     }
 
     //DELETE
     @DeleteMapping("/deleteMitarbeiter/{id}")
-    public TMitarbeiter deleteMitarbeiter(@PathVariable int id) {
+    public TMitarbeiter deleteMitarbeiter(@PathVariable Long id) {
         mitarbeiterServiceImplement.deleteMitarbeiterById(id);
         return null;
     }
@@ -55,7 +55,7 @@ public class MitarbeiterController {
     }
 
     @GetMapping("/getDienstplanById/{id}")
-    public TDienstplan getDienstplanById(@PathVariable int id) {
+    public TDienstplan getDienstplanById(@PathVariable Long id) {
         return mitarbeiterServiceImplement.getDienstplanByMitarbeiterId(id);
     }
 
@@ -72,13 +72,13 @@ public class MitarbeiterController {
 
     //PUT
     @PutMapping("/updateDienstplan/{id}")
-    public TDienstplan updateDienstplan(@PathVariable Integer id, @RequestBody TDienstplan dienstplan) {
+    public TDienstplan updateDienstplan(@PathVariable Long id, @RequestBody TDienstplan dienstplan) {
         return mitarbeiterServiceImplement.updateDienstplan(dienstplan, id);
     }
 
     //DELETE
     @DeleteMapping("/deleteDienstplan/{id}")
-    public TDienstplan deleteDienstplan(@PathVariable int id) {
+    public TDienstplan deleteDienstplan(@PathVariable Long id) {
         mitarbeiterServiceImplement.deleteDienstplanById(id);
         return null;
     }

@@ -20,7 +20,7 @@ public class KinderController {
     }
 
     @GetMapping("/getKind/{id}")
-    public TKinder getKindById(@PathVariable Integer id){
+    public TKinder getKindById(@PathVariable Long id){
 
         return kinderServiceImplement.getKindById(id);
     }
@@ -30,11 +30,11 @@ public class KinderController {
         return kinderServiceImplement.addKinder(kinder);
     }
     @PutMapping("/updateKind/{id}")
-    public TKinder updateKind(@RequestBody TKinder kinder,@PathVariable Integer id){
+    public TKinder updateKind(@RequestBody TKinder kinder,@PathVariable Long id){
         return kinderServiceImplement.updateKindById(kinder,id);
     }
     @DeleteMapping("/deleteKind/{id}")
-    public String deleteKindById(@PathVariable Integer id){
+    public String deleteKindById(@PathVariable Long id){
 
         return kinderServiceImplement.deleteKindById(id);
     }
